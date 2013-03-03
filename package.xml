@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package name="be.bastelstu.wcf.chromaHash" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
+<package name="be.bastelstu.wcf.faker" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
 	<packageinformation>
-		<packagename><![CDATA[ChromaHash]]></packagename>
-		<packagedescription><![CDATA[ChromaHash for WoltLab Community Framework™.]]></packagedescription>
-		<packagedescription language="de"><![CDATA[ChromaHash für WoltLab Community Framework™.]]></packagedescription>
+		<packagename><![CDATA[Faker]]></packagename>
+		<packagedescription><![CDATA[Faker for WoltLab Community Framework™.]]></packagedescription>
+		<packagedescription language="de"><![CDATA[Faker für WoltLab Community Framework™.]]></packagedescription>
 		<standalone>0</standalone>
 		<version>1.0.0 Alpha 1</version>
 		<date>2011-11-26</date>
@@ -19,17 +19,10 @@
 	</requiredpackages>
 	
 	<instructions type="install">
-		<instruction type="option">option.xml</instruction>
 		<instruction type="file">file.tar</instruction>
-		<instruction type="templateListener">templateListener.xml</instruction>
-		<instruction type="language">language/*.xml</instruction>
-		<instruction type="script" run="standalone">acp/be.bastelstu.wcf.chromaHash.install.php</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="*">
-		<instruction type="option">option.xml</instruction>
 		<instruction type="file">file.tar</instruction>
-		<instruction type="templateListener">templateListener.xml</instruction>
-		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 </package>
