@@ -11,8 +11,15 @@ namespace wcf\system\faker;
  * @subpackage	system.faker
  */
 abstract class AbstractFaker implements IFaker {
-	private $generator = null;
+	/**
+	 * instance of faker generator
+	 * @var \Faker\Generator
+	 */
+	protected $generator = null;
 	
+	/**
+	 * @see \wcf\system\faker\IFaker::__construct()
+	 */
 	public function __construct(\Faker\Generator $generator) {
 		$this->generator = $generator;
 	}

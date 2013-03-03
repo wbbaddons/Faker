@@ -11,6 +11,15 @@ namespace wcf\system\faker;
  * @subpackage	system.faker
  */
 interface IFaker {
+	/**
+	 * Initializes faker with given generator.
+	 * 
+	 * @param \Faker\Generator $generator
+	 */
 	public function __construct(\Faker\Generator $generator);
+	
+	/**
+	 * Creates fake and inserts it into database.
+	 */
 	public function fake();
 }

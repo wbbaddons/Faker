@@ -1,5 +1,6 @@
 <?php
 namespace wcf\system\worker;
+use \wcf\system\exception\SystemException;
 
 /**
  * Worker implementation for generating Fake data.
@@ -56,7 +57,7 @@ class FakerWorker extends AbstractWorker {
 		require_once(WCF_DIR.'lib/system/api/faker/src/autoload.php');
 		$className = $this->parameters['faker'];
 		
-		$faker = new $className(\Faker::create($this->parameters['language']));
+		$faker = new $className(\Faker\Factory::create($this->parameters['language']));
 		for ($i = $this->limit * $this->loopCount, $j = 0; $i < $this->count && $j < $this->limit; $i++, $j++) {
 			$faker->fake();
 		}
