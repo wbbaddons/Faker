@@ -2,7 +2,7 @@
 namespace wcf\system\faker;
 
 /**
- * All Fakers must implement this interface.
+ * Base implementation for fakers.
  * 
  * @author	Tim Düsterhus
  * @copyright	2013 Tim Düsterhus
@@ -10,7 +10,10 @@ namespace wcf\system\faker;
  * @package	be.bastelstu.wcf.faker
  * @subpackage	system.faker
  */
-interface IFaker {
-	public function __construct(\Faker\Generator $generator);
-	public function fake();
+abstract class AbstractFaker implements IFaker {
+	private $generator = null;
+	
+	public function __construct(\Faker\Generator $generator) {
+		$this->generator = $generator;
+	}
 }

@@ -35,6 +35,10 @@ class FakerWorker extends AbstractWorker {
 		if (!isset($this->parameters['amount'])) {
 			throw new SystemException("amount missing");
 		}
+		
+		if (!isset($this->parameters['language'])) {
+			$this->parameters['language'] = 'en_US';
+		}
 	}
 	
 	/**
@@ -48,8 +52,11 @@ class FakerWorker extends AbstractWorker {
 	 * @see	wcf\system\worker\IWorker::execute()
 	 */
 	public function execute() {
+		// load fakers autoloader
+		require_once(WCF_DIR.'lib/system/api/faker/src/autoload.php');
 		$className = $this->parameters['faker'];
-		$faker = new $className();
+		
+		$faker = new $className(\Faker::create($this->parameters['language']));
 		for ($i = $this->limit * $this->loopCount, $j = 0; $i < $this->count && $j < $this->limit; $i++, $j++) {
 			$faker->fake();
 		}
