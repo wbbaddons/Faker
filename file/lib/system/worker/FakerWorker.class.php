@@ -1,6 +1,7 @@
 <?php
 namespace wcf\system\worker;
 use \wcf\system\exception\SystemException;
+use \wcf\system\WCF;
 
 /**
  * Worker implementation for generating Fake data.
@@ -58,9 +59,12 @@ class FakerWorker extends AbstractWorker {
 		$className = $this->parameters['faker'];
 		
 		$faker = new $className(\Faker\Factory::create($this->parameters['language']));
+		
+		WCF::getDB()->beginTransaction();
 		for ($i = $this->limit * $this->loopCount, $j = 0; $i < $this->count && $j < $this->limit; $i++, $j++) {
 			$faker->fake();
 		}
+		WCF::getDB()->commitTransaction();
 	}
 	
 	/**

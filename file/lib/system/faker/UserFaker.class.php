@@ -24,6 +24,7 @@ class UserFaker extends AbstractFaker {
 				'username' => $username,
 				'email' => $email,
 				'password' => $password,
+				'registrationDate' => \wcf\util\MathUtil::getRandomValue(946681200, TIME_NOW)
 			)
 		);
 		$objectAction = new \wcf\data\user\UserAction(array(), 'create', $data);
