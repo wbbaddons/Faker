@@ -3,7 +3,7 @@
 	<packageinformation>
 		<packagename><![CDATA[Faker]]></packagename>
 		<packagedescription><![CDATA[Content Faker for WoltLab Community Framework™.]]></packagedescription>
-		<version>1.0.0 Alpha 1</version>
+		<version>1.0.0 Alpha 2</version>
 		<date>2013-03-20</date>
 	</packageinformation>
 	
@@ -14,9 +14,18 @@
 	
 	<requiredpackages>
 		<requiredpackage minversion="2.0.0 Alpha 1">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="1.0.0 Alpha 1">com.woltlab.wcf.user</requiredpackage>
 	</requiredpackages>
 	
 	<instructions type="install">
+		<instruction type="acpTemplate">acptemplate.tar</instruction>
+		<instruction type="file">file.tar</instruction>
+		
+		<instruction type="acpMenu">acpMenu.xml</instruction>
+		<instruction type="language">language/*.xml</instruction>
+	</instructions>
+	
+	<instructions type="update" fromversion="*">
 		<instruction type="acpTemplate">acptemplate.tar</instruction>
 		<instruction type="file">file.tar</instruction>
 		

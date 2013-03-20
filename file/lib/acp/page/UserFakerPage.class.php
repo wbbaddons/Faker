@@ -10,7 +10,7 @@ namespace wcf\acp\page;
  * @package	be.bastelstu.wcf.faker
  * @subpackage	acp.page
  */
-class UserFakerPage extends \wcf\page\AbstractPage {
+class UserFakerPage extends AbstractFakerPage {
 	/**
 	 * @see	\wcf\page\AbstractPage::$activeMenuItem
 	 */
