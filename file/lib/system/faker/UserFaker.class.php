@@ -55,7 +55,6 @@ class UserFaker extends AbstractFaker {
 			$options[\wcf\data\user\User::getUserOptionID('aboutMe')] = $this->generator->text(500);
 		}
 		
-		
 		// handle birthday
 		if (isset($this->parameters['userRandomBirthday']) && $this->parameters['userRandomBirthday']) {
 			$options[\wcf\data\user\User::getUserOptionID('birthday')] = $this->generator->dateTimeBetween("-90 years", "-14 years")->format('Y-m-d');
