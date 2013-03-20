@@ -27,6 +27,10 @@ class UserFaker extends AbstractFaker {
 				'registrationDate' => \wcf\util\MathUtil::getRandomValue(946681200, TIME_NOW)
 			)
 		);
+		if (isset($this->parameters['groupIDs'])) {
+			$data['groups'] = $this->parameters['groupIDs'];
+		}
+		
 		$objectAction = new \wcf\data\user\UserAction(array(), 'create', $data);
 		$objectAction->executeAction();
 	}

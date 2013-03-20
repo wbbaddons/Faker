@@ -14,12 +14,13 @@ interface IFaker {
 	/**
 	 * Initializes faker with given generator.
 	 * 
-	 * @param \Faker\Generator $generator
+	 * @param	\Faker\Generator	$generator
+	 * @param	array			$parameters
 	 */
-	public function __construct(\Faker\Generator $generator);
+	public function __construct(\Faker\Generator $generator, array $parameters);
 	
 	/**
-	 * Creates fake and inserts it into database.
+	 * Creates fake content and inserts it into database.
 	 */
 	public function fake();
 }

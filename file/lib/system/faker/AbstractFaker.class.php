@@ -18,9 +18,16 @@ abstract class AbstractFaker implements IFaker {
 	protected $generator = null;
 	
 	/**
-	 * @see \wcf\system\faker\IFaker::__construct()
+	 * parameters used to fake the content
+	 * @var	array
 	 */
-	public function __construct(\Faker\Generator $generator) {
+	protected $parameters = array();
+	
+	/**
+	 * @see	\wcf\system\faker\IFaker::__construct()
+	 */
+	public function __construct(\Faker\Generator $generator, array $parameters) {
 		$this->generator = $generator;
+		$this->parameters = $parameters;
 	}
 }

@@ -23,11 +23,11 @@ class FakerWorker extends AbstractWorker {
 	 */
 	public function validate() {
 		if (!isset($this->parameters['faker'])) {
-			throw new SystemException("faker missing");
+			throw new SystemException("Missing 'faker' parameter");
 		}
 		
 		if (!class_exists($this->parameters['faker'])) {
-			throw new SystemException("unable to find faker '".$this->parameters['faker']);
+			throw new SystemException("Unable to find faker '".$this->parameters['faker']);
 		}
 		
 		if (!\wcf\util\ClassUtil::isInstanceOf($this->parameters['faker'], '\wcf\system\faker\IFaker')) {
@@ -35,11 +35,15 @@ class FakerWorker extends AbstractWorker {
 		}
 		
 		if (!isset($this->parameters['amount'])) {
-			throw new SystemException("amount missing");
+			throw new SystemException("Missing 'amount' parameter");
 		}
 		
 		if (!isset($this->parameters['language'])) {
 			$this->parameters['language'] = 'en_US';
+		}
+		
+		if (!isset($this->parameters['proceedController'])) {
+			throw new SystemException("Missing 'proceedController' parameter");
 		}
 	}
 	
@@ -58,7 +62,7 @@ class FakerWorker extends AbstractWorker {
 		require_once(WCF_DIR.'lib/system/api/faker/src/autoload.php');
 		$className = $this->parameters['faker'];
 		
-		$faker = new $className(\Faker\Factory::create($this->parameters['language']));
+		$faker = new $className(\Faker\Factory::create($this->parameters['language']), $this->parameters);
 		
 		WCF::getDB()->beginTransaction();
 		for ($i = $this->limit * $this->loopCount, $j = 0; $i < $this->count && $j < $this->limit; $i++, $j++) {
@@ -71,6 +75,7 @@ class FakerWorker extends AbstractWorker {
 	 * @see	wcf\system\worker\IWorker::getProceedURL()
 	 */
 	public function getProceedURL() {
-		return \wcf\system\request\LinkHandler::getInstance()->getLink('Faker');
+		// todo: add application parameter
+		return \wcf\system\request\LinkHandler::getInstance()->getLink($this->parameters['proceedController']);
 	}
 }

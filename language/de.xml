@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de">
+	<category name="wcf.acp.faker">
+		<item name="wcf.acp.faker.amount"><![CDATA[Menge]]></item>
+		<item name="wcf.acp.faker.button.user"><![CDATA[Benutzer erstellen]]></item>
+		<item name="wcf.acp.faker.faking.user"><![CDATA[Benutzer werden erstellt]]></item>
+		<item name="wcf.acp.faker.user"><![CDATA[Benutzer]]></item>
+		<item name="wcf.acp.faker.user.userGroups"><![CDATA[Benutzergruppen]]></item>
+		<item name="wcf.acp.faker.user.userGroups.description"><![CDATA[Wählen Sie die Benutzergruppen aus, in denen sich die erstellen Benutzer befinden werden.]]></item>
+	</category>
+	
+	<category name="wcf.acp.menu">
+		<item name="wcf.acp.menu.link.faker"><![CDATA[Faker]]></item>
+		<item name="wcf.acp.menu.link.faker.user"><![CDATA[Benutzer-Inhalte]]></item>
+	</category>
+</language>
