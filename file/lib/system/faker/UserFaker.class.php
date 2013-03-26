@@ -12,18 +12,17 @@ namespace wcf\system\faker;
  */
 class UserFaker extends AbstractFaker {
 	/**
-	 * @see \wcf\system\faker\IFaker::fake()
+	 * @see	\wcf\system\faker\IFaker::fake()
 	 */
 	public function fake() {
 		$username = $this->generator->userName;
 		$password = $username;
-		$email = $this->generator->safeEmail;
 		
 		$parameters = array(
 			'data' => array(
 				'languageID' => \wcf\system\language\LanguageFactory::getInstance()->getLanguageByCode(substr($this->parameters['fakerLocal'], 0, 2))->languageID,
 				'username' => $username,
-				'email' => $email,
+				'email' => $this->generator->safeEmail,
 				'password' => $password,
 				'registrationDate' => \wcf\util\MathUtil::getRandomValue(946681200, TIME_NOW)
 			)
