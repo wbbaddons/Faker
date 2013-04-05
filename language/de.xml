@@ -11,7 +11,7 @@
 		<item name="wcf.acp.faker.local.de_AT"><![CDATA[Deutsch (Österreich)]]></item>
 		<item name="wcf.acp.faker.local.de_DE"><![CDATA[Deutsch (Deutschland)]]></item>
 		<item name="wcf.acp.faker.local.description"><![CDATA[Sprache des Fakers und des erstellten Benutzers]]></item>
-		<item name="wcf.acp.faker.local.en_GB"><![CDATA[Englisch (Großbrittanien)]]></item>
+		<item name="wcf.acp.faker.local.en_GB"><![CDATA[Englisch (Großbritannien)]]></item>
 		<item name="wcf.acp.faker.local.en_US"><![CDATA[Englisch (USA)]]></item>
 		<item name="wcf.acp.faker.local.es_AR"><![CDATA[Spanisch (Argentinien)]]></item>
 		<item name="wcf.acp.faker.local.es_ES"><![CDATA[Spanisch (Spanien)]]></item>
