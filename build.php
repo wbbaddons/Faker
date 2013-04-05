@@ -24,6 +24,7 @@ EOT;
 		unlink('package.xml.old');
 	}
 	if (file_exists('file.tar')) unlink('file.tar');
+	if (file_exists('acptemplate.tar')) unlink('acptemplate.tar');
 	if (file_exists('be.bastelstu.wcf.faker.tar')) unlink('be.bastelstu.wcf.faker.tar');
 echo <<<EOT
 
@@ -68,6 +69,16 @@ EOT;
 	if ($code != 0) exit($code);
 echo <<<EOT
 
+Building acptemplate.tar
+------------------------
+
+EOT;
+	chdir('../acptemplate');
+	passthru('tar cvf ../acptemplate.tar *', $code);
+	if ($code != 0) exit($code);
+
+echo <<<EOT
+
 Building be.bastelstu.wcf.faker.tar
 ----------------------------------
 
@@ -83,4 +94,4 @@ EOT;
 	if ($code != 0) exit($code);
 
 if (file_exists('file.tar')) unlink('file.tar');
-
+if (file_exists('acptemplate.tar')) unlink('acptemplate.tar');
