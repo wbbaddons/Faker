@@ -40,6 +40,13 @@ class WallResponseFaker extends AbstractFaker {
 	public $wallCommentCount = 0;
 	
 	/**
+	 * valid wall comment IDs
+	 * 
+	 * @var	array<integer>
+	 */
+	public $wallCommentIDs = array();
+	
+	/**
 	 * @see	\wcf\system\faker\AbstractFaker::__construct()
 	 */
 	public function __construct(\Faker\Generator $generator, array $parameters) {
@@ -55,13 +62,15 @@ class WallResponseFaker extends AbstractFaker {
 		$this->objectTypeID = \wcf\system\comment\CommentHandler::getInstance()->getObjectTypeID('com.woltlab.wcf.user.profileComment');
 		$this->objectType = \wcf\data\object\type\ObjectTypeCache::getInstance()->getObjectType($this->objectTypeID);
 		
-		$sql = "SELECT	COUNT(*)
+		$sql = "SELECT	commentID
 			FROM	wcf".WCF_N."_comment
 			WHERE	objectTypeID = ?";
 		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql);
 		$statement->execute(array($this->objectTypeID));
 		
-		$this->wallCommentCount = $statement->fetchColumn();
+		$this->wallCommentIDs = array();
+		while ($commentID = $statement->fetchColumn()) $this->wallCommentIDs[] = $commentID;
+		$this->wallCommentCount = count($this->wallCommentIDs);
 	}
 	
 	/**
@@ -70,10 +79,9 @@ class WallResponseFaker extends AbstractFaker {
 	public function fake() {
 		$sql = "SELECT		*
 			FROM		wcf".WCF_N."_comment
-			WHERE		objectTypeID = ?
-			ORDER BY	commentID ASC";
-		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->wallCommentCount - 1));
-		$statement->execute(array($this->objectTypeID));
+			WHERE		commentID = ?";
+		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1);
+		$statement->execute(array($this->wallCommentIDs[$this->generator->numberBetween(0, $this->wallCommentCount - 1)]));
 		$target = $statement->fetchObject('\wcf\data\comment\Comment');
 		
 		$sql = "SELECT		userID, username, registrationDate
