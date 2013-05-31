@@ -16,18 +16,36 @@ class UserFaker extends AbstractFaker {
 	 * @see	\wcf\system\faker\IFaker::fake()
 	 */
 	public function fake() {
-		$username = $this->generator->userName;
+		$username = $tmpName = $this->generator->userName;
+		$username = \wcf\util\StringUtil::replace(',', '', $username);
+		
+		while(!\wcf\util\UserUtil::isAvailableUsername($tmpName)) {
+			$tmpName = $username . $this->generator->randomNumber(4);
+		}
+		
+		$username = $tmpName;
 		$password = $username;
+		$email = $username . '@' . $this->generator->safeEmailDomain;
+		
+		// shouldn't happen
+		if(!\wcf\util\UserUtil::isValidEmail($email)) {
+			$email = $this->generator->safeEmail;
+		}
+		
+		while(!\wcf\util\UserUtil::isAvailableEmail($email)) {
+			$email = $this->generator->safeEmail;
+		}
 		
 		$parameters = array(
 			'data' => array(
 				'languageID' => \wcf\system\language\LanguageFactory::getInstance()->getLanguageByCode(substr($this->parameters['fakerLocale'], 0, 2))->languageID,
 				'username' => $username,
-				'email' => $this->generator->safeEmail,
+				'email' => $email,
 				'password' => $password,
-				'registrationDate' => $this->generator->numberBetween(strtotime('2000-01-01 GMT'), TIME_NOW)
+				'registrationDate' => $this->generator->dateTimeBetween('2000-01-01 GMT', 'now')->getTimestamp()
 			)
 		);
+		
 		if (isset($this->parameters['groupIDs'])) {
 			$parameters['groups'] = $this->parameters['groupIDs'];
 		}
@@ -87,7 +105,7 @@ class UserFaker extends AbstractFaker {
 			$parameters['options'] = $options;
 		}
 		
-		$objectAction = new \wcf\data\user\group\UserAction(array(), 'create', $parameters);
+		$objectAction = new \wcf\data\user\UserAction(array(), 'create', $parameters);
 		$objectAction->executeAction();
 	}
 }
