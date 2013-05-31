@@ -18,6 +18,7 @@
 	<nav class="tabMenu">
 		<ul>
 			<li><a href="{@$__wcf->getAnchor('user')}">{lang}wcf.acp.faker.user{/lang}</a></li>
+			<li><a href="{@$__wcf->getAnchor('wall')}">{lang}wcf.acp.faker.user.wall{/lang}</a></li>
 			
 			{event name='tabMenuTabs'}
 		</ul>
@@ -119,6 +120,44 @@
 		
 		<div class="formSubmit">
 			<button id="fakeUsers" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user{/lang}</button>
+		</div>
+	</div>
+	
+	<div id="wall" class="container containerPadding tabMenuContent">
+		<script type="text/javascript">
+		//<![CDATA[
+			$(function() {
+				$('#fakeWall').click(function () {
+					new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall{/lang}', {
+						amount: $('#wallAmount').val(),
+						faker: 'wcf\\system\\faker\\WallFaker',
+						fakerLocale: $('#wallFakerLocale').val(),
+						proceedController: 'UserFaker'
+					});
+				});
+			});
+		//]]>
+		</script>
+		
+		<fieldset>
+			<legend>{lang}wcf.global.form.data{/lang}</legend>
+			
+			<dl>
+				<dt><label for="wallFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
+				<dd>
+					{htmlOptions options=$availableLocales name='wallFakerLocale' id='wallFakerLocale'}
+					<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt><label for="wallAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+				<dd><input type="number" id="wallAmount" name="wallAmount" class="small" min="1" value="100" /></dd>
+			</dl>
+		</fieldset>
+		
+		<div class="formSubmit">
+			<button id="fakeWall" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.wall{/lang}</button>
 		</div>
 	</div>
 	
