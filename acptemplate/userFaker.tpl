@@ -19,6 +19,7 @@
 		<ul>
 			<li><a href="{@$__wcf->getAnchor('user')}">{lang}wcf.acp.faker.user{/lang}</a></li>
 			<li><a href="{@$__wcf->getAnchor('wall')}">{lang}wcf.acp.faker.user.wall{/lang}</a></li>
+			<li><a href="{@$__wcf->getAnchor('follower')}">{lang}wcf.acp.faker.user.follower{/lang}</a></li>
 			
 			{event name='tabMenuTabs'}
 		</ul>
@@ -178,6 +179,36 @@
 		
 		<div class="formSubmit">
 			<button id="fakeWall" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.wall{/lang}</button>
+		</div>
+	</div>
+	
+	<div id="follower" class="container containerPadding tabMenuContent">
+		<script type="text/javascript">
+		//<![CDATA[
+			$(function() {
+				$('#fakeFollower').click(function () {
+					new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.follower{/lang}', {
+						amount: $('#followerAmount').val(),
+						faker: 'wcf\\system\\faker\\UserFollowFaker',
+						fakerLocale: 'en_US',
+						proceedController: 'UserFaker'
+					});
+				});
+			});
+		//]]>
+		</script>
+		
+		<fieldset>
+			<legend>{lang}wcf.global.form.data{/lang}</legend>
+			
+			<dl>
+				<dt><label for="followerAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+				<dd><input type="number" id="followerAmount" name="followerAmount" class="small" min="1" value="1000" /></dd>
+			</dl>
+		</fieldset>
+		
+		<div class="formSubmit">
+			<button id="fakeFollower" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.follower{/lang}</button>
 		</div>
 	</div>
 	
