@@ -1,5 +1,6 @@
 <?php
 namespace wcf\system\faker;
+use \wcf\data\user\User;
 
 /**
  * Creates fake users.
@@ -53,40 +54,40 @@ class UserFaker extends AbstractFaker {
 				case 0:
 				case 1:
 				case 2:
-					$options[\wcf\data\user\User::getUserOptionID('gender')] = $this->parameters['userGender'];
+					$options[User::getUserOptionID('gender')] = $this->parameters['userGender'];
 				break;
 				
 				default:
-					$options[\wcf\data\user\User::getUserOptionID('gender')] = $this->generator->numberBetween(0, 2);
+					$options[User::getUserOptionID('gender')] = $this->generator->numberBetween(0, 2);
 				break;
 			}
 		}
 		
 		// handle aboutMe
 		if (isset($this->parameters['userRandomAboutMe']) && $this->parameters['userRandomAboutMe']) {
-			$options[\wcf\data\user\User::getUserOptionID('aboutMe')] = $this->generator->text($this->generator->numberBetween(50, 1500));
+			$options[User::getUserOptionID('aboutMe')] = $this->generator->text($this->generator->numberBetween(50, 1500));
 		}
 		
 		// handle birthday
 		if (isset($this->parameters['userRandomBirthday']) && $this->parameters['userRandomBirthday']) {
-			$options[\wcf\data\user\User::getUserOptionID('birthday')] = $this->generator->dateTimeBetween("-90 years", "-14 years")->format('Y-m-d');
+			$options[User::getUserOptionID('birthday')] = $this->generator->dateTimeBetween("-90 years", "-14 years")->format('Y-m-d');
 		}
 		
 		// handle location
 		if (isset($this->parameters['userRandomLocation']) && $this->parameters['userRandomLocation']) {
-			$options[\wcf\data\user\User::getUserOptionID('location')] = $this->generator->address;
+			$options[User::getUserOptionID('location')] = $this->generator->address;
 		}
 		
 		// handle homepage
 		if (isset($this->parameters['userRandomHomepage']) && $this->parameters['userRandomHomepage']) {
-			$options[\wcf\data\user\User::getUserOptionID('homepage')] = $this->generator->url;
+			$options[User::getUserOptionID('homepage')] = $this->generator->url;
 		}
 		
 		if (!empty($options)) {
 			$parameters['options'] = $options;
 		}
 		
-		$objectAction = new \wcf\data\user\UserAction(array(), 'create', $parameters);
+		$objectAction = new \wcf\data\user\group\UserAction(array(), 'create', $parameters);
 		$objectAction->executeAction();
 	}
 }
