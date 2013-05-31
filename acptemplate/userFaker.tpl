@@ -40,7 +40,9 @@
 						fakerLocale: $('#userFakerLocale').val(),
 						proceedController: 'UserFaker',
 						userGender: $('#userGender').val(),
+						userRandomOldUsername: $('#userRandomOldUsername').is(':checked') ? 1 : 0,
 						userRandomAboutMe: $('#userRandomAboutMe').is(':checked') ? 1 : 0,
+						userRandomSignature: $('#userRandomSignature').is(':checked') ? 1 : 0,
 						userRandomBirthday: $('#userRandomBirthday').is(':checked') ? 1 : 0,
 						userRandomHomepage: $('#userRandomHomepage').is(':checked') ? 1 : 0,
 						userRandomLocation: $('#userRandomLocation').is(':checked') ? 1 : 0
@@ -79,6 +81,10 @@
 			<legend>{lang}wcf.user.option.category.profile{/lang}</legend>
 			
 			<dl>
+				<dd><label><input type="checkbox" id="userRandomOldUsername" /> {lang}wcf.acp.faker.user.oldUsername{/lang}</label></dd>
+			</dl>
+			
+			<dl>
 				<dt><label for="userGender">{lang}wcf.user.option.gender{/lang}</label></dt>
 				<dd>
 					<select name="userGender" id="userGender">
@@ -92,6 +98,10 @@
 			
 			<dl>
 				<dd><label><input type="checkbox" id="userRandomAboutMe" /> {lang}wcf.acp.faker.user.aboutMe{/lang}</label></dd>
+			</dl>
+			
+			<dl>
+				<dd><label><input type="checkbox" id="userRandomSignature" /> {lang}wcf.acp.faker.user.signature{/lang}</label></dd>
 			</dl>
 			
 			<dl>

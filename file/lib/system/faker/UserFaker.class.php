@@ -24,11 +24,24 @@ class UserFaker extends AbstractFaker {
 				'username' => $username,
 				'email' => $this->generator->safeEmail,
 				'password' => $password,
-				'registrationDate' => \wcf\util\MathUtil::getRandomValue(946681200, TIME_NOW)
+				'registrationDate' => $this->generator->numberBetween(strtotime('2000-01-01 GMT'), TIME_NOW)
 			)
 		);
 		if (isset($this->parameters['groupIDs'])) {
 			$parameters['groups'] = $this->parameters['groupIDs'];
+		}
+		
+		// handle old name
+		if (isset($this->parameters['userRandomOldUsername']) && $this->parameters['userRandomOldName']) {
+			// 2 percent chance
+			if ($this->generator->boolean(2)) {
+				$parameters['data']['oldUsername'] = $this->generator->userName;
+			}
+		}
+		
+		// handle signature
+		if (isset($this->parameters['userRandomSignature']) && $this->parameters['userRandomSignature']) {
+			$parameters['data']['signature'] = $this->generator->text($this->generator->numberBetween(10, 500));
 		}
 		
 		// handle options
@@ -44,14 +57,14 @@ class UserFaker extends AbstractFaker {
 				break;
 				
 				default:
-					$options[\wcf\data\user\User::getUserOptionID('gender')] = \wcf\util\MathUtil::getRandomValue(0, 2);
+					$options[\wcf\data\user\User::getUserOptionID('gender')] = $this->generator->numberBetween(0, 2);
 				break;
 			}
 		}
 		
 		// handle aboutMe
 		if (isset($this->parameters['userRandomAboutMe']) && $this->parameters['userRandomAboutMe']) {
-			$options[\wcf\data\user\User::getUserOptionID('aboutMe')] = $this->generator->text(500);
+			$options[\wcf\data\user\User::getUserOptionID('aboutMe')] = $this->generator->text($this->generator->numberBetween(50, 1500));
 		}
 		
 		// handle birthday
