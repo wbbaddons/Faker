@@ -37,13 +37,13 @@
 						amount: $('#userAmount').val(),
 						groupIDs: $groupIDs,
 						faker: 'wcf\\system\\faker\\UserFaker',
-						fakerLocal: $('#userFakerLocal').val(),
+						fakerLocale: $('#userFakerLocale').val(),
 						proceedController: 'UserFaker',
 						userGender: $('#userGender').val(),
-						userRandomAboutMe: $('#userRandomAboutMe').prop('checked') ? 1 : 0,
-						userRandomBirthday: $('#userRandomBirthday').prop('checked') ? 1 : 0,
-						userRandomHomepage: $('#userRandomHomepage').prop('checked') ? 1 : 0,
-						userRandomLocation: $('#userRandomLocation').prop('checked') ? 1 : 0
+						userRandomAboutMe: $('#userRandomAboutMe').is(':checked') ? 1 : 0,
+						userRandomBirthday: $('#userRandomBirthday').is(':checked') ? 1 : 0,
+						userRandomHomepage: $('#userRandomHomepage').is(':checked') ? 1 : 0,
+						userRandomLocation: $('#userRandomLocation').is(':checked') ? 1 : 0
 					});
 				});
 			});
@@ -54,10 +54,10 @@
 			<legend>{lang}wcf.global.form.data{/lang}</legend>
 			
 			<dl>
-				<dt><label for="userFakerLocal">{lang}wcf.acp.faker.local{/lang}</label></dt>
+				<dt><label for="userFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
 				<dd>
-					{htmlOptions options=$availableLocals name='userFakerLocal' id='userFakerLocal'}
-					<small>{lang}wcf.acp.faker.local.description{/lang}</small>
+					{htmlOptions options=$availableLocales name='userFakerLocale' id='userFakerLocale'}
+					<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
 				</dd>
 			</dl>
 			

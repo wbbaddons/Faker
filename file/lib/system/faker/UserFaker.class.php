@@ -20,7 +20,7 @@ class UserFaker extends AbstractFaker {
 		
 		$parameters = array(
 			'data' => array(
-				'languageID' => \wcf\system\language\LanguageFactory::getInstance()->getLanguageByCode(substr($this->parameters['fakerLocal'], 0, 2))->languageID,
+				'languageID' => \wcf\system\language\LanguageFactory::getInstance()->getLanguageByCode(substr($this->parameters['fakerLocale'], 0, 2))->languageID,
 				'username' => $username,
 				'email' => $this->generator->safeEmail,
 				'password' => $password,

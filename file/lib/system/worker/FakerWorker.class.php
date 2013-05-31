@@ -38,8 +38,8 @@ class FakerWorker extends AbstractWorker {
 			throw new SystemException("Missing 'amount' parameter");
 		}
 		
-		if (!isset($this->parameters['language'])) {
-			$this->parameters['language'] = 'en_US';
+		if (!isset($this->parameters['fakerLocale'])) {
+			$this->parameters['fakerLocale'] = 'en_US';
 		}
 		
 		if (!isset($this->parameters['proceedController'])) {
@@ -62,7 +62,7 @@ class FakerWorker extends AbstractWorker {
 		require_once(WCF_DIR.'lib/system/api/faker/src/autoload.php');
 		$className = $this->parameters['faker'];
 		
-		$faker = new $className(\Faker\Factory::create($this->parameters['language']), $this->parameters);
+		$faker = new $className(\Faker\Factory::create($this->parameters['fakerLocale']), $this->parameters);
 		
 		WCF::getDB()->beginTransaction();
 		for ($i = $this->limit * $this->loopCount, $j = 0; $i < $this->count && $j < $this->limit; $i++, $j++) {

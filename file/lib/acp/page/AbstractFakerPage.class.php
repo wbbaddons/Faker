@@ -15,13 +15,13 @@ abstract class AbstractFakerPage extends \wcf\page\AbstractPage {
 	 * list of available languages
 	 * @var	array<string>
 	 */
-	public $availableLocals = array();
+	public $availableLocales = array();
 	
 	/**
-	 * list of available provider locals
+	 * list of available provider locales
 	 * @var	array<string>
 	 */
-	public static $providerLocals = array(
+	public static $providerLocales = array(
 		'bg_BG',
 		'cs_CZ',
 		'da_DK',
@@ -51,7 +51,7 @@ abstract class AbstractFakerPage extends \wcf\page\AbstractPage {
 	public function assignVariables() {
 		parent::assignVariables();
 		
-		\wcf\system\WCF::getTPL()->assign('availableLocals', $this->availableLocals);
+		\wcf\system\WCF::getTPL()->assign('availableLocales', $this->availableLocales);
 	}
 	
 	/**
@@ -60,10 +60,10 @@ abstract class AbstractFakerPage extends \wcf\page\AbstractPage {
 	public function readData() {
 		parent::readData();
 		
-		foreach (static::$providerLocals as $local) {
-			$languageCode = substr($local, 0, 2);
+		foreach (static::$providerLocales as $locale) {
+			$languageCode = substr($locale, 0, 2);
 			if (\wcf\system\language\LanguageFactory::getInstance()->getLanguageByCode($languageCode)) {
-				$this->availableLocals[$local] = \wcf\system\WCF::getLanguage()->get('wcf.acp.faker.local.'.$local);
+				$this->availableLocales[$locale] = \wcf\system\WCF::getLanguage()->get('wcf.acp.faker.locale.'.$locale);
 			}
 		}
 	}
