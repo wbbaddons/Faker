@@ -1,5 +1,6 @@
 <?php
 namespace wcf\acp\page;
+use \wcf\data\user\group\UserGroup;
 
 /**
  * Shows the user faker page.
@@ -22,8 +23,18 @@ class UserFakerPage extends AbstractFakerPage {
 	public function assignVariables() {
 		parent::assignVariables();
 		
+		$groups = UserGroup::getGroupsByType(array(), array(
+			UserGroup::EVERYONE,
+			UserGroup::GUESTS,
+			UserGroup::USERS
+		));
+		
+		foreach ($groups as $key => $group) {
+			if ($group->isAdminGroup()) unset($groups[$key]);
+		}
+		
 		\wcf\system\WCF::getTPL()->assign(array(
-			'userGroups' => \wcf\data\user\group\UserGroup::getGroupsByType(array(\wcf\data\user\group\UserGroup::OTHER))
+			'userGroups' => $groups
 		));
 	}
 }
