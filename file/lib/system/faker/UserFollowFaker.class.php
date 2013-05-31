@@ -82,6 +82,7 @@ class UserFollowFaker extends AbstractFaker {
 		do {
 			$statement->execute(array($target->userID));
 			$follower = $statement->fetchObject('\wcf\data\user\User');
+		}
 		while ($follower->userID == $target->userID);
 		
 		WCF::getUser()->userID = $follower->userID;
