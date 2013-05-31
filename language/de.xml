@@ -3,16 +3,16 @@
 	<category name="wcf.acp.faker">
 		<item name="wcf.acp.faker.amount"><![CDATA[Menge]]></item>
 		<item name="wcf.acp.faker.button.user"><![CDATA[Benutzer erstellen]]></item>
-		<item name="wcf.acp.faker.button.user.wall"><![CDATA[Pinnwand-Kommentare erstellen]]></item>
+		<item name="wcf.acp.faker.button.user.wall"><![CDATA[Pinnwand-Einträge erstellen]]></item>
 		<item name="wcf.acp.faker.faking.user"><![CDATA[Benutzer werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
+		<item name="wcf.acp.faker.faking.user.wall.response"><![CDATA[Pinnwand-Antworten werden erstellt]]></item>
 		<item name="wcf.acp.faker.locale"><![CDATA[Faker-Sprache]]></item>
 		<item name="wcf.acp.faker.locale.bg_BG"><![CDATA[Bulgarisch]]></item>
 		<item name="wcf.acp.faker.locale.cs_CZ"><![CDATA[Tschechisch]]></item>
 		<item name="wcf.acp.faker.locale.da_DK"><![CDATA[Dänisch]]></item>
 		<item name="wcf.acp.faker.locale.de_AT"><![CDATA[Deutsch (Österreich)]]></item>
 		<item name="wcf.acp.faker.locale.de_DE"><![CDATA[Deutsch (Deutschland)]]></item>
-		<item name="wcf.acp.faker.locale.description"><![CDATA[Sprache des Fakers und des erstellten Benutzers]]></item>
 		<item name="wcf.acp.faker.locale.description"><![CDATA[Sprache des erstellten Inhalts.]]></item>
 		<item name="wcf.acp.faker.locale.en_CA"><![CDATA[Englisch (Kanada)]]></item>
 		<item name="wcf.acp.faker.locale.en_GB"><![CDATA[Englisch (Großbritannien)]]></item>
@@ -44,6 +44,9 @@
 		<item name="wcf.acp.faker.user.userGroups"><![CDATA[Benutzergruppen]]></item>
 		<item name="wcf.acp.faker.user.userGroups.description"><![CDATA[Wählen Sie die Benutzergruppen aus, in denen sich die erstellen Benutzer befinden werden.]]></item>
 		<item name="wcf.acp.faker.user.wall"><![CDATA[Pinnwand]]></item>
+		<item name="wcf.acp.faker.user.wall.type"><![CDATA[Art des Eintrags]]></item>
+		<item name="wcf.acp.faker.user.wall.type.wall"><![CDATA[Kommentar]]></item>
+		<item name="wcf.acp.faker.user.wall.type.wallResponse"><![CDATA[Antwort]]></item>
 	</category>
 	
 	<category name="wcf.acp.menu">

@@ -89,7 +89,7 @@
 				<dt><label for="userGender">{lang}wcf.user.option.gender{/lang}</label></dt>
 				<dd>
 					<select name="userGender" id="userGender">
-						<option value="0">{lang}wcf.global.noDeclaration{/lang}</option>
+						<option value="0" selected="selected">{lang}wcf.global.noDeclaration{/lang}</option>
 						<option value="-1">{lang}wcf.acp.faker.random{/lang}</option>
 						<option value="1">{lang}wcf.user.gender.male{/lang}</option>
 						<option value="2">{lang}wcf.user.gender.female{/lang}</option>
@@ -128,12 +128,22 @@
 		//<![CDATA[
 			$(function() {
 				$('#fakeWall').click(function () {
-					new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall{/lang}', {
-						amount: $('#wallAmount').val(),
-						faker: 'wcf\\system\\faker\\WallFaker',
-						fakerLocale: $('#wallFakerLocale').val(),
-						proceedController: 'UserFaker'
-					});
+					if ($('#wallType').val() == 'Wall') {
+						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall{/lang}', {
+							amount: $('#wallAmount').val(),
+							faker: 'wcf\\system\\faker\\WallFaker',
+							fakerLocale: $('#wallFakerLocale').val(),
+							proceedController: 'UserFaker'
+						});
+					}
+					else {
+						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall.response{/lang}', {
+							amount: $('#wallAmount').val(),
+							faker: 'wcf\\system\\faker\\WallResponseFaker',
+							fakerLocale: $('#wallFakerLocale').val(),
+							proceedController: 'UserFaker'
+						});
+					}
 				});
 			});
 		//]]>
@@ -153,6 +163,16 @@
 			<dl>
 				<dt><label for="wallAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
 				<dd><input type="number" id="wallAmount" name="wallAmount" class="small" min="1" value="100" /></dd>
+			</dl>
+			
+			<dl>
+				<dt><label for="wallType">{lang}wcf.acp.faker.user.wall.type{/lang}</label></dt>
+				<dd>
+					<select name="wallType" id="wallType">
+						<option value="Wall" selected="selected">{lang}wcf.acp.faker.user.wall.type.wall{/lang}</option>
+						<option value="WallResponse">{lang}wcf.acp.faker.user.wall.type.wallResponse{/lang}</option>
+					</select>
+				</dd>
 			</dl>
 		</fieldset>
 		
