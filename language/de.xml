@@ -3,9 +3,10 @@
 	<category name="wcf.acp.faker">
 		<item name="wcf.acp.faker.amount"><![CDATA[Menge]]></item>
 		<item name="wcf.acp.faker.button.user"><![CDATA[Benutzer erstellen]]></item>
-		<item name="wcf.acp.faker.button.user.wall"><![CDATA[Pinnwand-Einträge erstellen]]></item>
+		<item name="wcf.acp.faker.button.user.wall.comment"><![CDATA[Pinnwand-Kommentare erstellen]]></item>
+		<item name="wcf.acp.faker.button.user.wall.response"><![CDATA[Pinnwand-Antworten erstellen]]></item>
 		<item name="wcf.acp.faker.faking.user"><![CDATA[Benutzer werden erstellt]]></item>
-		<item name="wcf.acp.faker.faking.user.wall"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
+		<item name="wcf.acp.faker.faking.user.wall.comment"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.response"><![CDATA[Pinnwand-Antworten werden erstellt]]></item>
 		<item name="wcf.acp.faker.locale"><![CDATA[Faker-Sprache]]></item>
 		<item name="wcf.acp.faker.locale.bg_BG"><![CDATA[Bulgarisch]]></item>
@@ -44,9 +45,8 @@
 		<item name="wcf.acp.faker.user.userGroups"><![CDATA[Benutzergruppen]]></item>
 		<item name="wcf.acp.faker.user.userGroups.description"><![CDATA[Wählen Sie die Benutzergruppen aus, in denen sich die erstellen Benutzer befinden werden.]]></item>
 		<item name="wcf.acp.faker.user.wall"><![CDATA[Pinnwand]]></item>
-		<item name="wcf.acp.faker.user.wall.type"><![CDATA[Art des Eintrags]]></item>
-		<item name="wcf.acp.faker.user.wall.type.wall"><![CDATA[Kommentar]]></item>
-		<item name="wcf.acp.faker.user.wall.type.wallResponse"><![CDATA[Antwort]]></item>
+		<item name="wcf.acp.faker.user.wall.comment"><![CDATA[Pinnwand-Kommentare]]></item>
+		<item name="wcf.acp.faker.user.wall.response"><![CDATA[Pinnwand-Antworten]]></item>
 	</category>
 	
 	<category name="wcf.acp.menu">
