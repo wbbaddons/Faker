@@ -19,7 +19,7 @@ class UserFaker extends AbstractFaker {
 		$username = $tmpName = $this->generator->userName;
 		$username = \wcf\util\StringUtil::replace(',', '', $username);
 		
-		while(!\wcf\util\UserUtil::isAvailableUsername($tmpName)) {
+		while (!\wcf\util\UserUtil::isAvailableUsername($tmpName)) {
 			$tmpName = $username . $this->generator->randomNumber(4);
 		}
 		
@@ -28,11 +28,11 @@ class UserFaker extends AbstractFaker {
 		$email = $username . '@' . $this->generator->safeEmailDomain;
 		
 		// shouldn't happen
-		if(!\wcf\util\UserUtil::isValidEmail($email)) {
+		if (!\wcf\util\UserUtil::isValidEmail($email)) {
 			$email = $this->generator->safeEmail;
 		}
 		
-		while(!\wcf\util\UserUtil::isAvailableEmail($email)) {
+		while (!\wcf\util\UserUtil::isAvailableEmail($email)) {
 			$email = $this->generator->safeEmail;
 		}
 		

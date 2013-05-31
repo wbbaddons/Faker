@@ -12,6 +12,7 @@
 		<item name="wcf.acp.faker.locale.da_DK"><![CDATA[Dänisch]]></item>
 		<item name="wcf.acp.faker.locale.de_AT"><![CDATA[Deutsch (Österreich)]]></item>
 		<item name="wcf.acp.faker.locale.de_DE"><![CDATA[Deutsch (Deutschland)]]></item>
+		<item name="wcf.acp.faker.locale.description"><![CDATA[Sprache des Fakers und des erstellten Benutzers]]></item>
 		<item name="wcf.acp.faker.locale.description"><![CDATA[Sprache des erstellten Inhalts.]]></item>
 		<item name="wcf.acp.faker.locale.en_CA"><![CDATA[Englisch (Kanada)]]></item>
 		<item name="wcf.acp.faker.locale.en_GB"><![CDATA[Englisch (Großbritannien)]]></item>
@@ -34,7 +35,9 @@
 		<item name="wcf.acp.faker.locale.ua_UA"><![CDATA[Ukrainisch]]></item>
 		<item name="wcf.acp.faker.random"><![CDATA[Zufällig]]></item>
 		<item name="wcf.acp.faker.user"><![CDATA[Benutzer]]></item>
+		<item name="wcf.acp.faker.user.oldUsername"><![CDATA[Zufälliger alter Benutzername]]></item>
 		<item name="wcf.acp.faker.user.aboutMe"><![CDATA[Zufälliger „Über mich“-Text]]></item>
+		<item name="wcf.acp.faker.user.signature"><![CDATA[Zufällige Signatur]]></item>
 		<item name="wcf.acp.faker.user.birthday"><![CDATA[Zufälliger Geburtstag]]></item>
 		<item name="wcf.acp.faker.user.homepage"><![CDATA[Zufällige Homepage]]></item>
 		<item name="wcf.acp.faker.user.location"><![CDATA[Zufälliger Wohnort]]></item>
