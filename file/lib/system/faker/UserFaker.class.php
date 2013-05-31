@@ -32,7 +32,7 @@ class UserFaker extends AbstractFaker {
 		}
 		
 		// handle old name
-		if (isset($this->parameters['userRandomOldUsername']) && $this->parameters['userRandomOldName']) {
+		if (isset($this->parameters['userRandomOldUsername']) && $this->parameters['userRandomOldUsername']) {
 			// 2 percent chance
 			if ($this->generator->boolean(2)) {
 				$parameters['data']['oldUsername'] = $this->generator->userName;
