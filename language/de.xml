@@ -11,12 +11,14 @@
 		<item name="wcf.acp.faker.locale.de_AT"><![CDATA[Deutsch (Österreich)]]></item>
 		<item name="wcf.acp.faker.locale.de_DE"><![CDATA[Deutsch (Deutschland)]]></item>
 		<item name="wcf.acp.faker.locale.description"><![CDATA[Sprache des Fakers und des erstellten Benutzers]]></item>
+		<item name="wcf.acp.faker.locale.en_CA"><![CDATA[Englisch (Kanada)]]></item>
 		<item name="wcf.acp.faker.locale.en_GB"><![CDATA[Englisch (Großbritannien)]]></item>
 		<item name="wcf.acp.faker.locale.en_US"><![CDATA[Englisch (USA)]]></item>
 		<item name="wcf.acp.faker.locale.es_AR"><![CDATA[Spanisch (Argentinien)]]></item>
 		<item name="wcf.acp.faker.locale.es_ES"><![CDATA[Spanisch (Spanien)]]></item>
-		<item name="wcf.acp.faker.locale.fi_FL"><![CDATA[Finnisch]]></item>
+		<item name="wcf.acp.faker.locale.fi_FI"><![CDATA[Finnisch]]></item>
 		<item name="wcf.acp.faker.locale.fr_FR"><![CDATA[Französisch]]></item>
+		<item name="wcf.acp.faker.locale.is_IS"><![CDATA[Isländisch]]></item>
 		<item name="wcf.acp.faker.locale.it_IT"><![CDATA[Italienisch]]></item>
 		<item name="wcf.acp.faker.locale.nl_BE"><![CDATA[Niederländisch (Belgien)]]></item>
 		<item name="wcf.acp.faker.locale.nl_NL"><![CDATA[Niederländisch (Niederlande)]]></item>
