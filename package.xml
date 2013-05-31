@@ -2,11 +2,9 @@
 <package name="be.bastelstu.wcf.faker" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
 	<packageinformation>
 		<packagename><![CDATA[Faker]]></packagename>
-		<packagedescription><![CDATA[Faker for WoltLab Community Framework™.]]></packagedescription>
-		<packagedescription language="de"><![CDATA[Faker für WoltLab Community Framework™.]]></packagedescription>
-		<standalone>0</standalone>
-		<version>1.0.0 Alpha 1</version>
-		<date>2011-11-26</date>
+		<packagedescription><![CDATA[Content Faker for WoltLab Community Framework™.]]></packagedescription>
+		<version>1.0.0 Alpha 2</version>
+		<date>2013-03-20</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -19,10 +17,18 @@
 	</requiredpackages>
 	
 	<instructions type="install">
+		<instruction type="acpTemplate">acptemplate.tar</instruction>
 		<instruction type="file">file.tar</instruction>
+		
+		<instruction type="acpMenu">acpMenu.xml</instruction>
+		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 	
 	<instructions type="update" fromversion="*">
+		<instruction type="acpTemplate">acptemplate.tar</instruction>
 		<instruction type="file">file.tar</instruction>
+		
+		<instruction type="acpMenu">acpMenu.xml</instruction>
+		<instruction type="language">language/*.xml</instruction>
 	</instructions>
 </package>
