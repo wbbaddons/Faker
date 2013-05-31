@@ -24,10 +24,18 @@ abstract class AbstractFaker implements IFaker {
 	protected $parameters = array();
 	
 	/**
+	 * language matching fakers language
+	 * @var	\wcf\data\language\Language
+	 */
+	protected $language = null;
+	
+	/**
 	 * @see	\wcf\system\faker\IFaker::__construct()
 	 */
 	public function __construct(\Faker\Generator $generator, array $parameters) {
 		$this->generator = $generator;
 		$this->parameters = $parameters;
+		
+		$this->language = \wcf\system\language\LanguageFactory::getInstance()->getLanguageByCode(substr($this->parameters['fakerLocale'], 0, 2));
 	}
 }
