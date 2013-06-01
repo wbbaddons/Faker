@@ -204,7 +204,7 @@
 			</fieldset>
 			
 			<div class="formSubmit">
-				<button id="fakeWallComments" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.wall.response{/lang}</button>
+				<button id="fakeWallResponses" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.wall.response{/lang}</button>
 			</div>
 		</div>
 	</div>
