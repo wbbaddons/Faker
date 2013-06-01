@@ -16,10 +16,6 @@ class TagFaker extends AbstractFaker {
 	 * @see	\wcf\system\faker\IFaker::fake()
 	 */
 	public function fake() {
-		// TEMPORARY
-		$this->language = \wcf\system\language\LanguageFactory::getInstance()->getLanguageByCode(substr($this->parameters['fakerLocale'], 0, 2));
-		// TEMPORARY
-		
 		$multiWordChance = (isset($this->parameters['multiWordChance'])) ? $this->parameters['multiWordChance'] : 10;
 		$multiWordCountMin = (isset($this->parameters['multiWordCountMin'])) ? $this->parameters['multiWordCountMin'] : 2;
 		$multiWordCountMax = (isset($this->parameters['multiWordCountMax'])) ? $this->parameters['multiWordCountMax'] : 5;
