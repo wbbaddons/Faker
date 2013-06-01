@@ -8,8 +8,12 @@
 		<item name="wcf.acp.faker.button.user.wall"><![CDATA[Pinnwand-Einträge erstellen]]></item>
 		<item name="wcf.acp.faker.button.tags"><![CDATA[Tags erstellen]]></item>
 		<item name="wcf.acp.faker.button.synonyms"><![CDATA[Synonyme erstellen]]></item>
+		<item name="wcf.acp.faker.button.user.follower"><![CDATA[Follower erstellen]]></item>
+		<item name="wcf.acp.faker.button.user.wall.comment"><![CDATA[Pinnwand-Kommentare erstellen]]></item>
+		<item name="wcf.acp.faker.button.user.wall.response"><![CDATA[Pinnwand-Antworten erstellen]]></item>
 		<item name="wcf.acp.faker.faking.user"><![CDATA[Benutzer werden erstellt]]></item>
-		<item name="wcf.acp.faker.faking.user.wall"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
+		<item name="wcf.acp.faker.faking.user.follower"><![CDATA[Follower werden erstellt]]></item>
+		<item name="wcf.acp.faker.faking.user.wall.comment"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.response"><![CDATA[Pinnwand-Antworten werden erstellt]]></item>
 		<item name="wcf.acp.faker.locale"><![CDATA[Faker-Sprache]]></item>
 		<item name="wcf.acp.faker.locale.bg_BG"><![CDATA[Bulgarisch]]></item>
@@ -47,10 +51,13 @@
 		<item name="wcf.acp.faker.user.location"><![CDATA[Zufälliger Wohnort]]></item>
 		<item name="wcf.acp.faker.user.userGroups"><![CDATA[Benutzergruppen]]></item>
 		<item name="wcf.acp.faker.user.userGroups.description"><![CDATA[Wählen Sie die Benutzergruppen aus, in denen sich die erstellen Benutzer befinden werden.]]></item>
+		<item name="wcf.acp.faker.user.follower"><![CDATA[Follower]]></item>
 		<item name="wcf.acp.faker.user.wall"><![CDATA[Pinnwand]]></item>
 		<item name="wcf.acp.faker.user.wall.type"><![CDATA[Art des Eintrags]]></item>
 		<item name="wcf.acp.faker.user.wall.type.wall"><![CDATA[Kommentar]]></item>
 		<item name="wcf.acp.faker.user.wall.type.wallResponse"><![CDATA[Antwort]]></item>
+		<item name="wcf.acp.faker.user.wall.comment"><![CDATA[Pinnwand-Kommentare]]></item>
+		<item name="wcf.acp.faker.user.wall.response"><![CDATA[Pinnwand-Antworten]]></item>
 		<item name="wcf.acp.faker.tags"><![CDATA[Tags]]></item>
 		<item name="wcf.acp.faker.tags.multipleWords.chance"><![CDATA[Multi-Wort-Wahrscheinlichkeit]]></item>
 		<item name="wcf.acp.faker.tags.multipleWords.chance.description"><![CDATA[Wahrscheinlichkeit, dass ein Tag bestehend aus mehreren Worten generiert wird.]]></item>

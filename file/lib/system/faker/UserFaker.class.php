@@ -38,7 +38,7 @@ class UserFaker extends AbstractFaker {
 		
 		$parameters = array(
 			'data' => array(
-				'languageID' => \wcf\system\language\LanguageFactory::getInstance()->getLanguageByCode(substr($this->parameters['fakerLocale'], 0, 2))->languageID,
+				'languageID' => $this->language->languageID,
 				'username' => $username,
 				'email' => $email,
 				'password' => $password,

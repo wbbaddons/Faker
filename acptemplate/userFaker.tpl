@@ -19,6 +19,7 @@
 		<ul>
 			<li><a href="{@$__wcf->getAnchor('user')}">{lang}wcf.acp.faker.user{/lang}</a></li>
 			<li><a href="{@$__wcf->getAnchor('wall')}">{lang}wcf.acp.faker.user.wall{/lang}</a></li>
+			<li><a href="{@$__wcf->getAnchor('follower')}">{lang}wcf.acp.faker.user.follower{/lang}</a></li>
 			
 			{event name='tabMenuTabs'}
 		</ul>
@@ -123,27 +124,102 @@
 		</div>
 	</div>
 	
-	<div id="wall" class="container containerPadding tabMenuContent">
+	<div id="wall" class="container containerPadding tabMenuContent tabMenuContainer">
+		<nav class="menu">
+			<ul>
+				<li><a href="{@$__wcf->getAnchor('wall-comment')}">{lang}wcf.acp.faker.user.wall.comment{/lang}</a></li>
+				<li><a href="{@$__wcf->getAnchor('wall-response')}">{lang}wcf.acp.faker.user.wall.response{/lang}</a></li>
+			</ul>
+		</nav>
+		
+		<div id="wall-comment">
+			<script type="text/javascript">
+			//<![CDATA[
+				$(function() {
+					$('#fakeWallComments').click(function () {
+						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall.comment{/lang}', {
+							amount: $('#wallCommentAmount').val(),
+							faker: 'wcf\\system\\faker\\WallFaker',
+							fakerLocale: $('#wallCommentFakerLocale').val(),
+							proceedController: 'UserFaker'
+						});
+					});
+				});
+			//]]>
+			</script>
+			
+			<fieldset>
+				<legend>{lang}wcf.global.form.data{/lang}</legend>
+				
+				<dl>
+					<dt><label for="wallCommentFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
+					<dd>
+						{htmlOptions options=$availableLocales name='wallFakerLocale' id='wallFakerLocale'}
+						<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
+					</dd>
+				</dl>
+				
+				<dl>
+					<dt><label for="wallCommentAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+					<dd><input type="number" id="wallCommentAmount" name="wallCommentAmount" class="small" min="1" value="100" /></dd>
+				</dl>
+			</fieldset>
+			
+			<div class="formSubmit">
+				<button id="fakeWallComments" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.wall.comment{/lang}</button>
+			</div>
+		</div>
+		
+		<div id="wall-response">
+			<script type="text/javascript">
+			//<![CDATA[
+				$(function() {
+					$('#fakeWallResponses').click(function () {
+						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall.response{/lang}', {
+							amount: $('#wallReponseAmount').val(),
+							faker: 'wcf\\system\\faker\\WallResponseFaker',
+							fakerLocale: $('#wallReponseFakerLocale').val(),
+							proceedController: 'UserFaker'
+						});
+					});
+				});
+			//]]>
+			</script>
+			
+			<fieldset>
+				<legend>{lang}wcf.global.form.data{/lang}</legend>
+				
+				<dl>
+					<dt><label for="wallReponseFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
+					<dd>
+						{htmlOptions options=$availableLocales name='wallFakerLocale' id='wallFakerLocale'}
+						<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
+					</dd>
+				</dl>
+				
+				<dl>
+					<dt><label for="wallReponseAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+					<dd><input type="number" id="wallReponseAmount" name="wallReponseAmount" class="small" min="1" value="100" /></dd>
+				</dl>
+			</fieldset>
+			
+			<div class="formSubmit">
+				<button id="fakeWallResponses" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.wall.response{/lang}</button>
+			</div>
+		</div>
+	</div>
+	
+	<div id="follower" class="container containerPadding tabMenuContent">
 		<script type="text/javascript">
 		//<![CDATA[
 			$(function() {
-				$('#fakeWall').click(function () {
-					if ($('#wallType').val() == 'Wall') {
-						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall{/lang}', {
-							amount: $('#wallAmount').val(),
-							faker: 'wcf\\system\\faker\\WallFaker',
-							fakerLocale: $('#wallFakerLocale').val(),
-							proceedController: 'UserFaker'
-						});
-					}
-					else {
-						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall.response{/lang}', {
-							amount: $('#wallAmount').val(),
-							faker: 'wcf\\system\\faker\\WallResponseFaker',
-							fakerLocale: $('#wallFakerLocale').val(),
-							proceedController: 'UserFaker'
-						});
-					}
+				$('#fakeFollower').click(function () {
+					new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.follower{/lang}', {
+						amount: $('#followerAmount').val(),
+						faker: 'wcf\\system\\faker\\UserFollowFaker',
+						fakerLocale: 'en_US',
+						proceedController: 'UserFaker'
+					});
 				});
 			});
 		//]]>
@@ -153,31 +229,13 @@
 			<legend>{lang}wcf.global.form.data{/lang}</legend>
 			
 			<dl>
-				<dt><label for="wallFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
-				<dd>
-					{htmlOptions options=$availableLocales name='wallFakerLocale' id='wallFakerLocale'}
-					<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
-				</dd>
-			</dl>
-			
-			<dl>
-				<dt><label for="wallAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
-				<dd><input type="number" id="wallAmount" name="wallAmount" class="small" min="1" value="100" /></dd>
-			</dl>
-			
-			<dl>
-				<dt><label for="wallType">{lang}wcf.acp.faker.user.wall.type{/lang}</label></dt>
-				<dd>
-					<select name="wallType" id="wallType">
-						<option value="Wall" selected="selected">{lang}wcf.acp.faker.user.wall.type.wall{/lang}</option>
-						<option value="WallResponse">{lang}wcf.acp.faker.user.wall.type.wallResponse{/lang}</option>
-					</select>
-				</dd>
+				<dt><label for="followerAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+				<dd><input type="number" id="followerAmount" name="followerAmount" class="small" min="1" value="1000" /></dd>
 			</dl>
 		</fieldset>
 		
 		<div class="formSubmit">
-			<button id="fakeWall" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.wall{/lang}</button>
+			<button id="fakeFollower" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.follower{/lang}</button>
 		</div>
 	</div>
 	
