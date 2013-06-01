@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de">
 	<category name="wcf.acp.faker">
+		<item name="wcf.acp.faker.from"><![CDATA[von]]></item>
+		<item name="wcf.acp.faker.to"><![CDATA[bis]]></item>
 		<item name="wcf.acp.faker.amount"><![CDATA[Menge]]></item>
 		<item name="wcf.acp.faker.button.user"><![CDATA[Benutzer erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.wall"><![CDATA[Pinnwand-Einträge erstellen]]></item>
+		<item name="wcf.acp.faker.button.tags"><![CDATA[Tags erstellen]]></item>
+		<item name="wcf.acp.faker.button.synonyms"><![CDATA[Synonyme erstellen]]></item>
 		<item name="wcf.acp.faker.faking.user"><![CDATA[Benutzer werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.response"><![CDATA[Pinnwand-Antworten werden erstellt]]></item>
@@ -47,10 +51,17 @@
 		<item name="wcf.acp.faker.user.wall.type"><![CDATA[Art des Eintrags]]></item>
 		<item name="wcf.acp.faker.user.wall.type.wall"><![CDATA[Kommentar]]></item>
 		<item name="wcf.acp.faker.user.wall.type.wallResponse"><![CDATA[Antwort]]></item>
+		<item name="wcf.acp.faker.tags"><![CDATA[Tags]]></item>
+		<item name="wcf.acp.faker.tags.multipleWords.chance"><![CDATA[Multi-Wort-Wahrscheinlichkeit]]></item>
+		<item name="wcf.acp.faker.tags.multipleWords.chance.description"><![CDATA[Wahrscheinlichkeit, dass ein Tag bestehend aus mehreren Worten generiert wird.]]></item>
+		<item name="wcf.acp.faker.tags.multipleWords.count"><![CDATA[Wortanzahl]]></item>
+		<item name="wcf.acp.faker.tags.multipleWords.count.description"><![CDATA[Gibt die Anzahl der Worte in einem Tag an. [{lang}wcf.acp.faker.from{/lang}, {lang}wcf.acp.faker.to{/lang}]]]></item>
+		<item name="wcf.acp.faker.tags.synonyms"><![CDATA[Synonyme]]></item>
 	</category>
 	
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.faker"><![CDATA[Faker]]></item>
 		<item name="wcf.acp.menu.link.faker.user"><![CDATA[Benutzer-Inhalte]]></item>
+		<item name="wcf.acp.menu.link.faker.tags"><![CDATA[Tags]]></item>
 	</category>
 </language>
