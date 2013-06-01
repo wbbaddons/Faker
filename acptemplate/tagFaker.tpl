@@ -91,7 +91,7 @@
 				$('#fakeSynonyms').click(function () {
 					new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.tags.synonyms{/lang}', {
 						amount: $('#synonymsAmount').val(),
-						faker: 'wcf\\system\\faker\\SynonymsFaker',
+						faker: 'wcf\\system\\faker\\TagsSynonymsFaker',
 						fakerLocale: $('#synonymsFakerLocale').val(),
 						proceedController: 'TagFaker'
 					});

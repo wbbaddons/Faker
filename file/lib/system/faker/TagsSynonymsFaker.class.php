@@ -11,7 +11,7 @@ use \wcf\data\user\User;
  * @package	be.bastelstu.wcf.faker
  * @subpackage	system.faker
  */
-class SynonymsFaker extends AbstractFaker {
+class TagsSynonymsFaker extends AbstractFaker {
 	/**
 	 * @see	\wcf\system\faker\IFaker::fake()
 	 */
