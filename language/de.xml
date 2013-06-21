@@ -62,7 +62,7 @@
 		<item name="wcf.acp.faker.tags.multipleWords.chance"><![CDATA[Multi-Wort-Wahrscheinlichkeit]]></item>
 		<item name="wcf.acp.faker.tags.multipleWords.chance.description"><![CDATA[Wahrscheinlichkeit, dass ein Tag bestehend aus mehreren Worten generiert wird.]]></item>
 		<item name="wcf.acp.faker.tags.multipleWords.count"><![CDATA[Wortanzahl]]></item>
-		<item name="wcf.acp.faker.tags.multipleWords.count.description"><![CDATA[Gibt die Anzahl der Worte in einem Tag an. [{lang}wcf.acp.faker.from{/lang}, {lang}wcf.acp.faker.to{/lang}]]]></item>
+		<item name="wcf.acp.faker.tags.multipleWords.count.description"><![CDATA[Gibt die Anzahl der Worte in einem Tag an. [von, bis]]]></item>
 		<item name="wcf.acp.faker.tags.synonyms"><![CDATA[Synonyme]]></item>
 	</category>
 	
