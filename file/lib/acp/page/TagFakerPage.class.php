@@ -1,6 +1,5 @@
 <?php
 namespace wcf\acp\page;
-use \wcf\data\user\group\UserGroup;
 
 /**
  * Shows the tag faker page.
