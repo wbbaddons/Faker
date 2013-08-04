@@ -1,6 +1,6 @@
 {include file='header' pageTitle='wcf.acp.menu.link.faker.tags'}
 
-<script type="text/javascript">
+<script data-relocate="true" type="text/javascript">
 //<![CDATA[
 	$(function() {
 		WCF.TabMenu.init();
@@ -25,7 +25,7 @@
 	</nav>
 	
 	<div id="tags" class="container containerPadding tabMenuContent">
-		<script type="text/javascript">
+		<script data-relocate="true" type="text/javascript">
 		//<![CDATA[
 			$(function() {
 				$('#fakeTags').click(function () {
@@ -85,7 +85,7 @@
 	</div>
 	
 	<div id="synonyms" class="container containerPadding tabMenuContent">
-		<script type="text/javascript">
+		<script data-relocate="true" type="text/javascript">
 		//<![CDATA[
 			$(function() {
 				$('#fakeSynonyms').click(function () {

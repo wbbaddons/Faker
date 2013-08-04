@@ -1,6 +1,6 @@
 {include file='header' pageTitle='wcf.acp.menu.link.faker.user'}
 
-<script type="text/javascript">
+<script data-relocate="true" type="text/javascript">
 //<![CDATA[
 	$(function() {
 		WCF.TabMenu.init();
@@ -26,7 +26,7 @@
 	</nav>
 	
 	<div id="user" class="container containerPadding tabMenuContent">
-		<script type="text/javascript">
+		<script data-relocate="true" type="text/javascript">
 		//<![CDATA[
 			$(function() {
 				$('#fakeUsers').click(function () {
@@ -133,7 +133,7 @@
 		</nav>
 		
 		<div id="wall-comment">
-			<script type="text/javascript">
+			<script data-relocate="true" type="text/javascript">
 			//<![CDATA[
 				$(function() {
 					$('#fakeWallComments').click(function () {
@@ -171,7 +171,7 @@
 		</div>
 		
 		<div id="wall-response">
-			<script type="text/javascript">
+			<script data-relocate="true" type="text/javascript">
 			//<![CDATA[
 				$(function() {
 					$('#fakeWallResponses').click(function () {
@@ -210,7 +210,7 @@
 	</div>
 	
 	<div id="follower" class="container containerPadding tabMenuContent">
-		<script type="text/javascript">
+		<script data-relocate="true" type="text/javascript">
 		//<![CDATA[
 			$(function() {
 				$('#fakeFollower').click(function () {
