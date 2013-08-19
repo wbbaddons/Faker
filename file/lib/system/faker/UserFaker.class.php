@@ -17,7 +17,7 @@ class UserFaker extends AbstractFaker {
 	 */
 	public function fake() {
 		$username = $tmpName = $this->generator->userName;
-		$username = \wcf\util\StringUtil::replace(',', '', $username);
+		$username = str_replace(',', '', $username);
 		
 		while (!\wcf\util\UserUtil::isAvailableUsername($tmpName)) {
 			$tmpName = $username . $this->generator->randomNumber(4);

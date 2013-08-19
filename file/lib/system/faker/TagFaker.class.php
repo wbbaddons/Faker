@@ -22,7 +22,7 @@ class TagFaker extends AbstractFaker {
 		
 		if ($this->generator->boolean($multiWordChance)) {
 			// this tag will be multiple words
-			$tag = $_tag = \wcf\util\StringUtil::substring($this->generator->words($this->generator->randomNumber($multiWordCountMin, $multiWordCountMax), true), 0, 251);
+			$tag = $_tag = mb_substr($this->generator->words($this->generator->randomNumber($multiWordCountMin, $multiWordCountMax), true), 0, 251);
 			
 			while (\wcf\data\tag\Tag::getTag($_tag, $this->language->languageID) !== null) {
 				$_tag = $tag . $this->generator->randomNumber(4);
