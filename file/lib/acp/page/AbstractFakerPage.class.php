@@ -27,26 +27,38 @@ abstract class AbstractFakerPage extends \wcf\page\AbstractPage {
 		'da_DK',
 		'de_AT',
 		'de_DE',
+		'en_AU',
 		'en_CA',
 		'en_GB',
+		'en_PH'
 		'en_US',
+		'en_ZA',
 		'es_AR',
 		'es_ES',
+		'es_PE',
 		'fi_FI',
+		'fr_BE',
 		'fr_FR',
+		'hu_HU'
+		'hy_AM',
 		'is_IS',
 		'it_IT',
+		'ja_JP',
+		'lv_LV',
 		'nl_BE',
 		'nl_NL',
 		'pl_PL',
 		'pt_BR',
+		'ro_MD',
+		'ro_RO',
 		'ru_RU',
 		'sk_SK',
 		'sr_Cyrl_RS',
 		'sr_Latn_RS',
 		'sr_RS',
 		'tr_TR',
-		'ua_UA'
+		'uk_UA',
+		'zh_CN'
 	);
 	
 	/**
