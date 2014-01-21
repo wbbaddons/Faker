@@ -48,11 +48,19 @@ abstract class AbstractLikeFaker extends AbstractFaker {
 		
 		if (isset($this->parameters['likeType'])) {
 			switch ($this->parameters['likeType']) {
-				case '+': $value = \wcf\data\like\Like::LIKE; break;
-				case '-': $value = \wcf\data\like\Like::DISLIKE; break;
+				case '+':
+					$value = \wcf\data\like\Like::LIKE;
+				break;
+				case '-':
+					$value = \wcf\data\like\Like::DISLIKE;
+				break;
 				case '+-': 
-					if ($this->generator->boolean) $value = \wcf\data\like\Like::LIKE;
-					else $value = \wcf\data\like\Like::DISLIKE;
+					if ($this->generator->boolean) {
+						$value = \wcf\data\like\Like::LIKE;
+					}
+					else {
+						$value = \wcf\data\like\Like::DISLIKE;
+					}
 			}
 		}
 		else {
@@ -61,4 +69,11 @@ abstract class AbstractLikeFaker extends AbstractFaker {
 		
 		\wcf\system\like\LikeHandler::getInstance()->like($likeableObject, $liker, $value);
 	}
+	
+	/**
+	 * Returns the object to like.
+	 * 
+	 * @return	\wcf\data\like\object\ILikeObject
+	 */
+	abstract public function getLikeableObject();
 }
