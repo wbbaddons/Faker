@@ -76,7 +76,7 @@ class WallFaker extends AbstractFaker {
 			'username' => $sender->username,
 			'message' => $this->generator->text($this->generator->numberBetween(10, 5000)),
 			'responses' => 0,
-			'lastResponseIDs' => serialize(array())
+			'responseIDs' => serialize(array())
 		));
 		
 		// update counter
