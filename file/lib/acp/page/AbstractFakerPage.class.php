@@ -30,7 +30,7 @@ abstract class AbstractFakerPage extends \wcf\page\AbstractPage {
 		'en_AU',
 		'en_CA',
 		'en_GB',
-		'en_PH'
+		'en_PH',
 		'en_US',
 		'en_ZA',
 		'es_AR',
@@ -39,7 +39,7 @@ abstract class AbstractFakerPage extends \wcf\page\AbstractPage {
 		'fi_FI',
 		'fr_BE',
 		'fr_FR',
-		'hu_HU'
+		'hu_HU',
 		'hy_AM',
 		'is_IS',
 		'it_IT',
