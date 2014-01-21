@@ -7,7 +7,7 @@
 		<item name="wcf.acp.faker.button.user"><![CDATA[Benutzer erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.wall"><![CDATA[Pinnwand-Einträge erstellen]]></item>
 		<item name="wcf.acp.faker.button.tags"><![CDATA[Tags erstellen]]></item>
-		<item name="wcf.acp.faker.button.synonyms"><![CDATA[Synonyme erstellen]]></item>
+		<item name="wcf.acp.faker.button.tags.synonyms"><![CDATA[Synonyme erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.follower"><![CDATA[Follower erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.wall.comment"><![CDATA[Pinnwand-Kommentare erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.wall.response"><![CDATA[Pinnwand-Antworten erstellen]]></item>
@@ -15,6 +15,8 @@
 		<item name="wcf.acp.faker.faking.user.follower"><![CDATA[Follower werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.comment"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.response"><![CDATA[Pinnwand-Antworten werden erstellt]]></item>
+		<item name="wcf.acp.faker.faking.tags"><![CDATA[Tags werden erstellt]]></item>
+		<item name="wcf.acp.faker.faking.tags.synonyms"><![CDATA[Tag-Synonyme werden erstellt]]></item>
 		<item name="wcf.acp.faker.locale"><![CDATA[Faker-Sprache]]></item>
 		<item name="wcf.acp.faker.locale.bg_BG"><![CDATA[Bulgarisch]]></item>
 		<item name="wcf.acp.faker.locale.cs_CZ"><![CDATA[Tschechisch]]></item>
