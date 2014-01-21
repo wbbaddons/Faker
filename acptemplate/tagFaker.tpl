@@ -92,7 +92,7 @@
 					new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.tags.synonyms{/lang}', {
 						amount: $('#synonymsAmount').val(),
 						faker: 'wcf\\system\\faker\\TagsSynonymsFaker',
-						fakerLocale: $('#synonymsFakerLocale').val(),
+						fakerLocale: 'en_US',
 						proceedController: 'TagFaker'
 					});
 				});
@@ -102,14 +102,6 @@
 		
 		<fieldset>
 			<legend>{lang}wcf.global.form.data{/lang}</legend>
-			
-			<dl>
-				<dt><label for="synonymsFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
-				<dd>
-					{htmlOptions options=$availableLocales name='synonymsFakerLocale' id='synonymsFakerLocale'}
-					<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
-				</dd>
-			</dl>
 			
 			<dl>
 				<dt><label for="synonymsAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
