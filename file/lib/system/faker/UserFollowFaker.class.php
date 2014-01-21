@@ -76,14 +76,11 @@ class UserFollowFaker extends AbstractFaker {
 		
 		$sql = "SELECT		userID
 			FROM		wcf".WCF_N."_user
+			WHERE		userID <> ?
 			ORDER BY	userID ASC";
-		$statement = WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->userCount - 1));
-			
-		do {
-			$statement->execute(array($target->userID));
-			$follower = $statement->fetchObject('\wcf\data\user\User');
-		}
-		while ($follower->userID == $target->userID);
+		$statement = WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->userCount - 2));
+		$statement->execute(array($target->userID));
+		$follower = $statement->fetchObject('\wcf\data\user\User');
 		
 		WCF::getUser()->userID = $follower->userID;
 		$objectAction = new \wcf\data\user\follow\UserFollowAction(array(), 'follow', array(
