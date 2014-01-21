@@ -5,32 +5,18 @@ namespace wcf\system\faker;
  * Creates fake wall posts.
  * 
  * @author	Tim Düsterhus
- * @copyright	2013 Tim Düsterhus
+ * @copyright	2013 - 2014 Tim Düsterhus
  * @license	Creative Commons Attribution-NonCommercial-ShareAlike <http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode>
  * @package	be.bastelstu.wcf.faker
  * @subpackage	system.faker
  */
-class WallFaker extends AbstractFaker {
+class WallFaker extends AbstractCommentFaker {
 	/**
-	 * number of user accounts
+	 * user whose wall will be commented
 	 * 
-	 * @var	integer
+	 * @var	\wcf\data\user\User
 	 */
-	public $userCount = 0;
-	
-	/**
-	 * object type id of profile comments
-	 * 
-	 * @var	integer
-	 */
-	public $objectTypeID = 0;
-	
-	/**
-	 * object type matching the object type id
-	 * 
-	 * @var	\wcf\data\object\type\ObjectType
-	 */
-	public $objectType = null;
+	protected $receiver = null;
 	
 	/**
 	 * @see	\wcf\system\faker\AbstractFaker::__construct()
@@ -38,48 +24,42 @@ class WallFaker extends AbstractFaker {
 	public function __construct(\Faker\Generator $generator, array $parameters) {
 		parent::__construct($generator, $parameters);
 		
-		$sql = "SELECT	COUNT(*)
-			FROM	wcf".WCF_N."_user";
-		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql);
-		$statement->execute();
-		
-		$this->userCount = $statement->fetchColumn();
-		
 		$this->objectTypeID = \wcf\system\comment\CommentHandler::getInstance()->getObjectTypeID('com.woltlab.wcf.user.profileComment');
 		$this->objectType = \wcf\data\object\type\ObjectTypeCache::getInstance()->getObjectType($this->objectTypeID);
 	}
 	
 	/**
-	 * @see	\wcf\system\faker\IFaker::fake()
+	 * @see	\wcf\system\faker\AbstractFaker::fake()
 	 */
 	public function fake() {
+		$this->getObject();
+		
+		parent::fake();
+	}
+	
+	/**
+	 * Fetches a user from the database.
+	 */
+	protected function getObject() {
 		$sql = "SELECT		userID, registrationDate
 			FROM		wcf".WCF_N."_user
 			ORDER BY	userID ASC";
 		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->userCount - 1));
 		$statement->execute();
-		$target = $statement->fetchObject('\wcf\data\user\User');
-		
-		$sql = "SELECT		userID, username, registrationDate
-			FROM		wcf".WCF_N."_user
-			ORDER BY	userID ASC";
-		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->userCount - 1));
-		$statement->execute();
-		$sender = $statement->fetchObject('\wcf\data\user\User');
-		
-		// create comment
-		$comment = \wcf\data\comment\CommentEditor::create(array(
-			'objectTypeID' => $this->objectTypeID,
-			'objectID' => $target->userID,
-			'time' => $this->generator->numberBetween(max($sender->registrationDate, $target->registrationDate), TIME_NOW),
-			'userID' => $sender->userID,
-			'username' => $sender->username,
-			'message' => $this->generator->text($this->generator->numberBetween(10, 5000)),
-			'responses' => 0,
-			'responseIDs' => serialize(array())
-		));
-		
-		// update counter
-		$this->objectType->getProcessor()->updateCounter($this->objectTypeID, 1);
+		$this->receiver = $statement->fetchObject('\wcf\data\user\User');
+	}
+	
+	/**
+	 * @see	\wcf\system\faker\AbstractCommentFaker::getObjectID()
+	 */
+	public function getObjectID() {
+		return $this->receiver->userID;
+	}
+	
+	/**
+	 * @see	\wcf\system\faker\AbstractCommentFaker::getCreationTime()
+	 */
+	public function getCreationTime() {
+		return $this->receiver->registrationDate;
 	}
 }
