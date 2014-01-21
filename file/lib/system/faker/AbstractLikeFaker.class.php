@@ -54,11 +54,11 @@ abstract class AbstractLikeFaker extends AbstractFaker {
 		$this->userCount = $statement->fetchColumn();
 		
 		$this->objectType = \wcf\system\like\LikeHandler::getInstance()->getObjectType($this->objectTypeName);
-                if ($this->objectType === null) {
-                        throw new UserInputException('objectType');
-                }
-                
-                $this->objectTypeProvider = $this->objectType->getProcessor();
+		if ($this->objectType === null) {
+			throw new UserInputException('objectType');
+		}
+		
+		$this->objectTypeProvider = $this->objectType->getProcessor();
 	}
 	
 	/**
@@ -67,7 +67,7 @@ abstract class AbstractLikeFaker extends AbstractFaker {
 	public function fake() {
 		$likeableObjectID = $this->getLikeableObjectID();
 		$likeableObject = $this->objectTypeProvider->getObjectByID($likeableObjectID);
-                $likeableObject->setObjectType($this->objectType);
+		$likeableObject->setObjectType($this->objectType);
 		
 		$sql = "SELECT		userID, username
 			FROM		wcf".WCF_N."_user

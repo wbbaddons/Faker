@@ -42,7 +42,7 @@ class CommentLikeFaker extends AbstractLikeFaker {
 	 * @see	\wcf\system\faker\AbstractLikeFaker::getLikeableObject()
 	 */
 	public function getLikeableObjectID() {
-                $sql = "SELECT		commentID
+		$sql = "SELECT		commentID
 			FROM		wcf".WCF_N."_comment";
 		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->commentCount - 1));
 		$statement->execute();
