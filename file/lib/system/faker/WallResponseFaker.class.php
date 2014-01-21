@@ -101,15 +101,14 @@ class WallResponseFaker extends AbstractFaker {
 		));
 		
 		// update response data
-		$lastResponseIDs = $target->getLastResponseIDs();
-		if (count($lastResponseIDs) == 3) array_shift($lastResponseIDs);
-		$lastResponseIDs[] = $response->responseID;
+		$responseIDs = $target->getResponseIDs();
+		if (count($responseIDs) < 3) $responseIDs[] = $response->responseID;
 		$responses = $target->responses + 1;
 		
 		// update comment
 		$commentEditor = new \wcf\data\comment\CommentEditor($target);
 		$commentEditor->update(array(
-			'lastResponseIDs' => serialize($lastResponseIDs),
+			'responseIDs' => serialize($responseIDs),
 			'responses' => $responses
 		));
 		
