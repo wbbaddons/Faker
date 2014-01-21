@@ -20,6 +20,27 @@ abstract class AbstractLikeFaker extends AbstractFaker {
 	public $userCount = 0;
 	
 	/**
+	 * object type name of the likeable object
+	 * 
+	 * @var	string
+	 */
+	public $objectTypeName = '';
+	
+	/**
+	 * object type of the likeable object
+	 * 
+	 * @var	\wcf\data\object\type\ObjectType
+	 */
+	public $objectType = null;
+	
+	/**
+	 * object type provider
+	 * 
+	 * @var	\wcf\data\object\type\AbstractObjectTypeProcessor
+	 */
+	public $objectTypeProvider = null;
+	
+	/**
 	 * @see	\wcf\system\faker\AbstractFaker::__construct()
 	 */
 	public function __construct(\Faker\Generator $generator, array $parameters) {
@@ -31,13 +52,22 @@ abstract class AbstractLikeFaker extends AbstractFaker {
 		$statement->execute();
 		
 		$this->userCount = $statement->fetchColumn();
+		
+		$this->objectType = \wcf\system\like\LikeHandler::getInstance()->getObjectType($this->objectTypeName);
+                if ($this->objectType === null) {
+                        throw new UserInputException('objectType');
+                }
+                
+                $this->objectTypeProvider = $this->objectType->getProcessor();
 	}
 	
 	/**
 	 * @see	\wcf\system\faker\IFaker::fake()
 	 */
 	public function fake() {
-		$likeableObject = $this->getLikeableObject();
+		$likeableObjectID = $this->getLikeableObjectID();
+		$likeableObject = $this->objectTypeProvider->getObjectByID($likeableObjectID);
+                $likeableObject->setObjectType($this->objectType);
 		
 		$sql = "SELECT		userID, username
 			FROM		wcf".WCF_N."_user
@@ -71,9 +101,9 @@ abstract class AbstractLikeFaker extends AbstractFaker {
 	}
 	
 	/**
-	 * Returns the object to like.
+	 * Returns the object id to like.
 	 * 
-	 * @return	\wcf\data\like\object\ILikeObject
+	 * @return	integer
 	 */
-	abstract public function getLikeableObject();
+	abstract public function getLikeableObjectID();
 }
