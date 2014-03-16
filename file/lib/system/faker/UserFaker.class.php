@@ -60,7 +60,7 @@ class UserFaker extends AbstractFaker {
 		
 		// handle signature
 		if (isset($this->parameters['userRandomSignature']) && $this->parameters['userRandomSignature']) {
-			$parameters['data']['signature'] = $this->generator->text($this->generator->numberBetween(10, 500));
+			$parameters['data']['signature'] = $this->generator->realText($this->generator->numberBetween(10, 500));
 		}
 		
 		// handle options
@@ -83,7 +83,7 @@ class UserFaker extends AbstractFaker {
 		
 		// handle aboutMe
 		if (isset($this->parameters['userRandomAboutMe']) && $this->parameters['userRandomAboutMe']) {
-			$options[User::getUserOptionID('aboutMe')] = $this->generator->text($this->generator->numberBetween(50, 1500));
+			$options[User::getUserOptionID('aboutMe')] = $this->generator->realText($this->generator->numberBetween(50, 1500));
 		}
 		
 		// handle birthday

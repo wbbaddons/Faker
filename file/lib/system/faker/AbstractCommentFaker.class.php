@@ -67,7 +67,7 @@ abstract class AbstractCommentFaker extends AbstractFaker {
 			'time' => $this->generator->numberBetween(max($sender->registrationDate, $creationTime), TIME_NOW),
 			'userID' => $sender->userID,
 			'username' => $sender->username,
-			'message' => $this->generator->text($this->generator->numberBetween(10, 5000)),
+			'message' => $this->generator->realText($this->generator->numberBetween(10, 5000)),
 			'responses' => 0,
 			'responseIDs' => serialize(array())
 		));
