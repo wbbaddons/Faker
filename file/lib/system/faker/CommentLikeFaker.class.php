@@ -25,15 +25,31 @@ class CommentLikeFaker extends AbstractLikeFaker {
 	public $objectTypeName = 'com.woltlab.wcf.comment';
 	
 	/**
+	 * For which object types should likes be generated?
+	 * 
+	 * @var	\wcf\system\database\util\PreparedStatementConditionBuilder
+	 */
+	public $condition = null;
+	
+	/**
 	 * @see	\wcf\system\faker\AbstractFaker::__construct()
 	 */
 	public function __construct(\Faker\Generator $generator, array $parameters) {
 		parent::__construct($generator, $parameters);
 		
+		$this->condition = new \wcf\system\database\util\PreparedStatementConditionBuilder();
+		if (isset($this->parameters['objectTypeIDs']) && !empty($this->parameters['objectTypeIDs'])) {
+			$this->condition->add('objectTypeID IN(?)', array($this->parameters['objectTypeIDs']));
+		}
+		else {
+			$this->condition->add('1=1');
+		}
+		
 		$sql = "SELECT	COUNT(*)
-			FROM	wcf".WCF_N."_comment";
+			FROM	wcf".WCF_N."_comment
+			".$this->condition;
 		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql);
-		$statement->execute();
+		$statement->execute($this->condition->getParameters());
 		
 		$this->commentCount = $statement->fetchColumn();
 	}
@@ -43,9 +59,10 @@ class CommentLikeFaker extends AbstractLikeFaker {
 	 */
 	public function getLikeableObjectID() {
 		$sql = "SELECT		commentID
-			FROM		wcf".WCF_N."_comment";
+			FROM		wcf".WCF_N."_comment
+			".$this->condition;
 		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->commentCount - 1));
-		$statement->execute();
+		$statement->execute($this->condition->getParameters());
 		
 		return $statement->fetchColumn();
 	}

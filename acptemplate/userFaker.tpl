@@ -1,6 +1,6 @@
 {include file='header' pageTitle='wcf.acp.menu.link.faker.user'}
 
-<script data-relocate="true" type="text/javascript">
+<script data-relocate="true">
 //<![CDATA[
 	$(function() {
 		WCF.TabMenu.init();
@@ -26,7 +26,7 @@
 	</nav>
 	
 	<div id="user" class="container containerPadding tabMenuContent">
-		<script data-relocate="true" type="text/javascript">
+		<script data-relocate="true">
 		//<![CDATA[
 			$(function() {
 				$('#fakeUsers').click(function () {
@@ -133,14 +133,14 @@
 		</nav>
 		
 		<div id="wall-comment">
-			<script data-relocate="true" type="text/javascript">
+			<script data-relocate="true">
 			//<![CDATA[
 				$(function() {
 					$('#fakeWallComments').click(function () {
 						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall.comment{/lang}', {
 							amount: $('#wallCommentAmount').val(),
 							faker: 'wcf\\system\\faker\\WallFaker',
-							fakerLocale: $('#wallCommentFakerLocale').val(),
+							fakerLocale: $('#wallFakerLocale').val(),
 							proceedController: 'UserFaker'
 						});
 					});
@@ -152,7 +152,7 @@
 				<legend>{lang}wcf.global.form.data{/lang}</legend>
 				
 				<dl>
-					<dt><label for="wallCommentFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
+					<dt><label for="wallFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
 					<dd>
 						{htmlOptions options=$availableLocales name='wallFakerLocale' id='wallFakerLocale'}
 						<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
@@ -171,14 +171,14 @@
 		</div>
 		
 		<div id="wall-response">
-			<script data-relocate="true" type="text/javascript">
+			<script data-relocate="true">
 			//<![CDATA[
 				$(function() {
 					$('#fakeWallResponses').click(function () {
 						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.wall.response{/lang}', {
-							amount: $('#wallReponseAmount').val(),
+							amount: $('#wallResponseAmount').val(),
 							faker: 'wcf\\system\\faker\\WallResponseFaker',
-							fakerLocale: $('#wallReponseFakerLocale').val(),
+							fakerLocale: $('#wallResponseFakerLocale').val(),
 							proceedController: 'UserFaker'
 						});
 					});
@@ -192,14 +192,14 @@
 				<dl>
 					<dt><label for="wallReponseFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
 					<dd>
-						{htmlOptions options=$availableLocales name='wallFakerLocale' id='wallFakerLocale'}
+						{htmlOptions options=$availableLocales name='wallResponseFakerLocale' id='wallResponseFakerLocale'}
 						<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
 					</dd>
 				</dl>
 				
 				<dl>
-					<dt><label for="wallReponseAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
-					<dd><input type="number" id="wallReponseAmount" name="wallReponseAmount" class="small" min="1" value="100" /></dd>
+					<dt><label for="wallResponseAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+					<dd><input type="number" id="wallResponseAmount" name="wallResponseAmount" class="small" min="1" value="100" /></dd>
 				</dl>
 			</fieldset>
 			
@@ -210,7 +210,7 @@
 	</div>
 	
 	<div id="follower" class="container containerPadding tabMenuContent">
-		<script data-relocate="true" type="text/javascript">
+		<script data-relocate="true">
 		//<![CDATA[
 			$(function() {
 				$('#fakeFollower').click(function () {

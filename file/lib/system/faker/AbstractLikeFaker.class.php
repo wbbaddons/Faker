@@ -76,8 +76,8 @@ abstract class AbstractLikeFaker extends AbstractFaker {
 		$statement->execute();
 		$liker = $statement->fetchObject('\wcf\data\user\User');
 		
-		if (isset($this->parameters['likeType'])) {
-			switch ($this->parameters['likeType']) {
+		if (isset($this->parameters['likeValue'])) {
+			switch ($this->parameters['likeValue']) {
 				case '+':
 					$value = \wcf\data\like\Like::LIKE;
 				break;

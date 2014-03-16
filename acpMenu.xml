@@ -14,5 +14,10 @@
 			<controller><![CDATA[wcf\acp\page\TagFakerPage]]></controller>
 			<parent>wcf.acp.menu.link.faker</parent>
 		</acpmenuitem>
+		
+		<acpmenuitem name="wcf.acp.menu.link.faker.likes">
+			<controller><![CDATA[wcf\acp\page\LikeFakerPage]]></controller>
+			<parent>wcf.acp.menu.link.faker</parent>
+		</acpmenuitem>
 	</import>
 </data>

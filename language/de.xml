@@ -4,6 +4,7 @@
 		<item name="wcf.acp.faker.from"><![CDATA[von]]></item>
 		<item name="wcf.acp.faker.to"><![CDATA[bis]]></item>
 		<item name="wcf.acp.faker.amount"><![CDATA[Menge]]></item>
+		
 		<item name="wcf.acp.faker.button.user"><![CDATA[Benutzer erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.wall"><![CDATA[Pinnwand-Einträge erstellen]]></item>
 		<item name="wcf.acp.faker.button.tags"><![CDATA[Tags erstellen]]></item>
@@ -11,12 +12,16 @@
 		<item name="wcf.acp.faker.button.user.follower"><![CDATA[Follower erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.wall.comment"><![CDATA[Pinnwand-Kommentare erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.wall.response"><![CDATA[Pinnwand-Antworten erstellen]]></item>
+		<item name="wcf.acp.faker.button.likes.comments"><![CDATA[Kommentar-Likes erstellen]]></item>
+		
 		<item name="wcf.acp.faker.faking.user"><![CDATA[Benutzer werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.follower"><![CDATA[Follower werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.comment"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.response"><![CDATA[Pinnwand-Antworten werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.tags"><![CDATA[Tags werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.tags.synonyms"><![CDATA[Tag-Synonyme werden erstellt]]></item>
+		<item name="wcf.acp.faker.faking.likes.comments"><![CDATA[Kommentar-Likes werden erstellt]]></item>
+		
 		<item name="wcf.acp.faker.locale"><![CDATA[Faker-Sprache]]></item>
 		<item name="wcf.acp.faker.locale.bg_BG"><![CDATA[Bulgarisch]]></item>
 		<item name="wcf.acp.faker.locale.cs_CZ"><![CDATA[Tschechisch]]></item>
@@ -43,7 +48,9 @@
 		<item name="wcf.acp.faker.locale.sr_Latn_RS"><![CDATA[Serbisch (lateinische Schrift)]]></item>
 		<item name="wcf.acp.faker.locale.tr_TR"><![CDATA[Türkisch]]></item>
 		<item name="wcf.acp.faker.locale.ua_UA"><![CDATA[Ukrainisch]]></item>
+		
 		<item name="wcf.acp.faker.random"><![CDATA[Zufällig]]></item>
+		
 		<item name="wcf.acp.faker.user"><![CDATA[Benutzer]]></item>
 		<item name="wcf.acp.faker.user.oldUsername"><![CDATA[Zufälliger alter Benutzername]]></item>
 		<item name="wcf.acp.faker.user.aboutMe"><![CDATA[Zufälliger „Über mich“-Text]]></item>
@@ -60,17 +67,23 @@
 		<item name="wcf.acp.faker.user.wall.type.wallResponse"><![CDATA[Antwort]]></item>
 		<item name="wcf.acp.faker.user.wall.comment"><![CDATA[Pinnwand-Kommentare]]></item>
 		<item name="wcf.acp.faker.user.wall.response"><![CDATA[Pinnwand-Antworten]]></item>
+		
 		<item name="wcf.acp.faker.tags"><![CDATA[Tags]]></item>
 		<item name="wcf.acp.faker.tags.multipleWords.chance"><![CDATA[Multi-Wort-Wahrscheinlichkeit]]></item>
 		<item name="wcf.acp.faker.tags.multipleWords.chance.description"><![CDATA[Wahrscheinlichkeit, dass ein Tag bestehend aus mehreren Worten generiert wird.]]></item>
 		<item name="wcf.acp.faker.tags.multipleWords.count"><![CDATA[Wortanzahl]]></item>
 		<item name="wcf.acp.faker.tags.multipleWords.count.description"><![CDATA[Gibt die Anzahl der Worte in einem Tag an. [{'wcf.acp.faker.from'|language}, {'wcf.acp.faker.to'|language}]]]></item>
 		<item name="wcf.acp.faker.tags.synonyms"><![CDATA[Synonyme]]></item>
+		
+		<item name="wcf.acp.faker.likes.value"><![CDATA[Wert]]></item>
+		<item name="wcf.acp.faker.likes.comments"><![CDATA[Kommentar-Likes]]></item>
+		<item name="wcf.acp.faker.likes.commentObjectTypeIDs"><![CDATA[Kommentar-Art]]></item>
 	</category>
 	
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.faker"><![CDATA[Faker]]></item>
 		<item name="wcf.acp.menu.link.faker.user"><![CDATA[Benutzer-Inhalte]]></item>
 		<item name="wcf.acp.menu.link.faker.tags"><![CDATA[Tags]]></item>
+		<item name="wcf.acp.menu.link.faker.likes"><![CDATA[Likes]]></item>
 	</category>
 </language>
