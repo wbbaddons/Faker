@@ -80,6 +80,8 @@
 			<button id="fakeComments" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.likes.comments{/lang}</button>
 		</div>
 	</div>
+	
+	{event name='tabMenuContent'}
 </div>
 
 {include file='footer'}

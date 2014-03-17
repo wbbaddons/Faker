@@ -115,6 +115,8 @@
 			<button id="fakeSynonyms" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.tags.synonyms{/lang}</button>
 		</div>
 	</div>
+	
+	{event name='tabMenuContent'}
 </div>
 
 {include file='footer'}
