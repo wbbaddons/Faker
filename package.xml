@@ -16,6 +16,10 @@
 		<requiredpackage minversion="2.0.0 Alpha 1">com.woltlab.wcf</requiredpackage>
 	</requiredpackages>
 	
+	<optionalpackages>
+		<optionalpackage file="optionals/be.bastelstu.wbb.faker.tar">be.bastelstu.wbb.faker</optionalpackage>
+	</optionalpackages>
+	
 	<instructions type="install">
 		<instruction type="acpTemplate">acptemplate.tar</instruction>
 		<instruction type="file">file.tar</instruction>
