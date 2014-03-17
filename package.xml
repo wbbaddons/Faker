@@ -3,7 +3,7 @@
 	<packageinformation>
 		<packagename><![CDATA[Faker]]></packagename>
 		<packagedescription><![CDATA[Content Faker for WoltLab Community Framework™.]]></packagedescription>
-		<version>1.0.0 Alpha 5</version>
+		<version>1.0.0 Beta 1</version>
 		<date>2013-03-20</date>
 	</packageinformation>
 	
