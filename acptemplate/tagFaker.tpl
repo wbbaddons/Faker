@@ -64,7 +64,7 @@
 			<dl>
 				<dt><label for="multiWordChance">{lang}wcf.acp.faker.tags.multipleWords.chance{/lang}</label></dt>
 				<dd>
-					<input type="number" id="multiWordChance" name="multiWordChance" class="small" min="0" value="10" />
+					<input type="number" id="multiWordChance" name="multiWordChance" class="small" min="0" max="100" value="10" />
 					<small>{lang}wcf.acp.faker.tags.multipleWords.chance.description{/lang}</small>
 				</dd>
 			</dl>
