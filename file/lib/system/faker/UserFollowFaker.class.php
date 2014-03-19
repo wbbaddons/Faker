@@ -37,8 +37,6 @@ class UserFollowFaker extends AbstractFaker {
 	 * @see	\wcf\system\faker\IFaker::fake()
 	 */
 	public function fake() {
-		$oldUserID = WCF::getUser()->userID;
-		
 		$sql = "SELECT		userID
 			FROM		wcf".WCF_N."_user
 			ORDER BY	userID ASC";
