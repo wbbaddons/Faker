@@ -70,7 +70,7 @@ class FakerWorker extends AbstractWorker {
 			$faker->fake();
 		}
 		WCF::getDB()->commitTransaction();
-		\wcf\system\session\SessionHandler::getInstance()->changeUser($user);
+		\wcf\system\session\SessionHandler::getInstance()->changeUser($user, true);
 	}
 	
 	/**
