@@ -20,34 +20,6 @@ class UserFollowFaker extends AbstractFaker {
 	public $userCount = 0;
 	
 	/**
-	 * object type id of profile comments
-	 * 
-	 * @var	integer
-	 */
-	public $objectTypeID = 0;
-	
-	/**
-	 * object type matching the object type id
-	 *
-	 * @var	\wcf\data\object\type\ObjectType
-	 */
-	public $objectType = null;
-	
-	/**
-	 * number of wall comments
-	 * 
-	 * @var	integer
-	 */
-	public $wallCommentCount = 0;
-	
-	/**
-	 * valid wall comment IDs
-	 * 
-	 * @var	array<integer>
-	 */
-	public $wallCommentIDs = array();
-	
-	/**
 	 * @see	\wcf\system\faker\AbstractFaker::__construct()
 	 */
 	public function __construct(\Faker\Generator $generator, array $parameters) {
