@@ -10,12 +10,14 @@
 		<item name="wcf.acp.faker.button.tags"><![CDATA[Tags erstellen]]></item>
 		<item name="wcf.acp.faker.button.tags.synonyms"><![CDATA[Synonyme erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.follower"><![CDATA[Follower erstellen]]></item>
+		<item name="wcf.acp.faker.button.user.block"><![CDATA[Nutzer blockieren]]></item>
 		<item name="wcf.acp.faker.button.user.wall.comment"><![CDATA[Pinnwand-Kommentare erstellen]]></item>
 		<item name="wcf.acp.faker.button.user.wall.response"><![CDATA[Pinnwand-Antworten erstellen]]></item>
 		<item name="wcf.acp.faker.button.likes.comments"><![CDATA[Kommentar-Likes erstellen]]></item>
 		
 		<item name="wcf.acp.faker.faking.user"><![CDATA[Benutzer werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.follower"><![CDATA[Follower werden erstellt]]></item>
+		<item name="wcf.acp.faker.faking.user.blocks"><![CDATA[Benutzer werden blockiert]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.comment"><![CDATA[Pinnwand-Kommentare werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.user.wall.response"><![CDATA[Pinnwand-Antworten werden erstellt]]></item>
 		<item name="wcf.acp.faker.faking.tags"><![CDATA[Tags werden erstellt]]></item>
@@ -76,6 +78,7 @@
 		<item name="wcf.acp.faker.user.userGroups"><![CDATA[Benutzergruppen]]></item>
 		<item name="wcf.acp.faker.user.userGroups.description"><![CDATA[Wählen Sie die Benutzergruppen aus, in denen sich die erstellen Benutzer befinden werden.]]></item>
 		<item name="wcf.acp.faker.user.follower"><![CDATA[Follower]]></item>
+		<item name="wcf.acp.faker.user.blocks"><![CDATA[Blockierte Benutzer]]></item>
 		<item name="wcf.acp.faker.user.wall"><![CDATA[Pinnwand]]></item>
 		<item name="wcf.acp.faker.user.wall.type"><![CDATA[Art des Eintrags]]></item>
 		<item name="wcf.acp.faker.user.wall.type.wall"><![CDATA[Kommentar]]></item>
