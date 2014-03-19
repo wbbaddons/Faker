@@ -64,11 +64,13 @@ class FakerWorker extends AbstractWorker {
 		
 		$faker = new $className(\Faker\Factory::create($this->parameters['fakerLocale']), $this->parameters);
 		
+		$user = WCF::getUser();
 		WCF::getDB()->beginTransaction();
 		for ($i = $this->limit * $this->loopCount, $j = 0; $i < $this->count && $j < $this->limit; $i++, $j++) {
 			$faker->fake();
 		}
 		WCF::getDB()->commitTransaction();
+		\wcf\system\session\SessionHandler::getInstance()->changeUser($user);
 	}
 	
 	/**
