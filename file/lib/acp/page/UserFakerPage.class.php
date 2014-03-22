@@ -18,23 +18,50 @@ class UserFakerPage extends AbstractFakerPage {
 	public $activeMenuItem = 'wcf.acp.menu.link.faker.user';
 	
 	/**
+	 * list of available user grouop
+	 * @var	array<\wcf\data\user\group\UserGroup>
+	 */
+	public $userGroups = array();
+	
+	/**
+	 * number of registered users
+	 * @var	integer
+	 */
+	public $userCount = 0;
+	
+	/**
 	 * @see	\wcf\page\IPage::assignVariables()
 	 */
 	public function assignVariables() {
 		parent::assignVariables();
 		
-		$groups = UserGroup::getGroupsByType(array(), array(
+		\wcf\system\WCF::getTPL()->assign(array(
+			'userGroups' => $this->userGroups,
+			'userCount' => $this->userCount
+		));
+	}
+	
+	/**
+	 * @see	\wcf\page\IPage::readData()
+	 */
+	public function readData() {
+		parent::readData();
+		
+		$this->userGroups = UserGroup::getGroupsByType(array(), array(
 			UserGroup::EVERYONE,
 			UserGroup::GUESTS,
 			UserGroup::USERS
 		));
 		
-		foreach ($groups as $key => $group) {
-			if ($group->isAdminGroup()) unset($groups[$key]);
+		foreach ($this->userGroups as $key => $group) {
+			if ($group->isAdminGroup()) unset($this->userGroups[$key]);
 		}
 		
-		\wcf\system\WCF::getTPL()->assign(array(
-			'userGroups' => $groups
-		));
+		$sql = "SELECT	COUNT(*)
+			FROM	wcf".WCF_N."_user";
+		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql);
+		$statement->execute();
+		
+		$this->userCount = $statement->fetchColumn();
 	}
 }
