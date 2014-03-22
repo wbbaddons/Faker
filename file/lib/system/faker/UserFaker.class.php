@@ -36,13 +36,16 @@ class UserFaker extends AbstractFaker {
 			$email = $this->generator->safeEmail;
 		}
 		
+		$registrationDate = $this->generator->dateTimeBetween('2000-01-01 GMT', 'now')->getTimestamp();
+		$lastActivityTime = $this->generator->optional($weight = 0.7)->numberBetween($registrationDate, TIME_NOW);
 		$parameters = array(
 			'data' => array(
 				'languageID' => $this->language->languageID,
 				'username' => $username,
 				'email' => $email,
 				'password' => $password,
-				'registrationDate' => $this->generator->dateTimeBetween('2000-01-01 GMT', 'now')->getTimestamp()
+				'registrationDate' => $registrationDate,
+				'lastActivityTime' => ($lastActivityTime === null) ? 0 : $lastActivityTime
 			)
 		);
 		
