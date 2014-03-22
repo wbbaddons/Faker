@@ -9,9 +9,7 @@
 </script>
 
 <header class="boxHeadline">
-	<hgroup>
-		<h1>{lang}wcf.acp.menu.link.faker.likes{/lang}</h1>
-	</hgroup>
+	<h1>{lang}wcf.acp.menu.link.faker.likes{/lang}</h1>
 </header>
 
 <div class="tabMenuContainer">
@@ -75,7 +73,7 @@
 				</dd>
 			</dl>
 		</fieldset>
-
+		
 		<div class="formSubmit">
 			<button id="fakeComments" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.likes.comments{/lang}</button>
 		</div>

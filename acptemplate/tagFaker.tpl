@@ -9,9 +9,7 @@
 </script>
 
 <header class="boxHeadline">
-	<hgroup>
-		<h1>{lang}wcf.acp.menu.link.faker.tags{/lang}</h1>
-	</hgroup>
+	<h1>{lang}wcf.acp.menu.link.faker.tags{/lang}</h1>
 </header>
 
 <div class="tabMenuContainer">
@@ -78,7 +76,7 @@
 				</dd>
 			</dl>
 		</fieldset>
-
+		
 		<div class="formSubmit">
 			<button id="fakeTags" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.tags{/lang}</button>
 		</div>
@@ -110,7 +108,7 @@
 				</dd>
 			</dl>
 		</fieldset>
-
+		
 		<div class="formSubmit">
 			<button id="fakeSynonyms" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.tags.synonyms{/lang}</button>
 		</div>
