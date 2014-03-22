@@ -3,6 +3,8 @@
 <script data-relocate="true">
 //<![CDATA[
 	$(function() {
+		WCF.Language.add('wcf.acp.worker.abort.confirmMessage', '{lang}wcf.acp.worker.abort.confirmMessage{/lang}');
+		
 		WCF.TabMenu.init();
 	});
 //]]>
