@@ -9,9 +9,7 @@
 </script>
 
 <header class="boxHeadline">
-	<hgroup>
-		<h1>{lang}wcf.acp.menu.link.faker.user{/lang}</h1>
-	</hgroup>
+	<h1>{lang}wcf.acp.menu.link.faker.user{/lang}</h1>
 </header>
 
 <div class="tabMenuContainer">
