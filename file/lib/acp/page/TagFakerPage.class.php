@@ -15,4 +15,34 @@ class TagFakerPage extends AbstractFakerPage {
 	 * @see	\wcf\page\AbstractPage::$activeMenuItem
 	 */
 	public $activeMenuItem = 'wcf.acp.menu.link.faker.tags';
+	
+	/**
+	 * number of available tags
+	 * 
+	 * @var	integer
+	 */
+	public $tagCount = 0;
+	
+	/**
+	 * @see	\wcf\page\IPage::assignVariables()
+	 */
+	public function assignVariables() {
+		parent::assignVariables();
+		
+		\wcf\system\WCF::getTPL()->assign('tagCount', $this->tagCount);
+	}
+	
+	/**
+	 * @see	\wcf\page\IPage::readData()
+	 */
+	public function readData() {
+		parent::readData();
+		
+		$sql = "SELECT	COUNT(*)
+			FROM	wcf".WCF_N."_tag";
+		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql);
+		$statement->execute();
+		
+		$this->tagCount = $statement->fetchColumn();
+	}
 }
