@@ -18,7 +18,9 @@
 	<nav class="tabMenu">
 		<ul>
 			<li><a href="{@$__wcf->getAnchor('tags')}">{lang}wcf.acp.faker.tags{/lang}</a></li>
-			<li><a href="{@$__wcf->getAnchor('synonyms')}">{lang}wcf.acp.faker.tags.synonyms{/lang}</a></li>
+			{if $tagCount}
+				<li><a href="{@$__wcf->getAnchor('synonyms')}">{lang}wcf.acp.faker.tags.synonyms{/lang}</a></li>
+			{/if}
 			
 			{event name='tabMenuTabs'}
 		</ul>
@@ -84,37 +86,39 @@
 		</div>
 	</div>
 	
-	<div id="synonyms" class="container containerPadding tabMenuContent">
-		<script data-relocate="true">
-		//<![CDATA[
-			$(function() {
-				$('#fakeSynonyms').click(function () {
-					new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.tags.synonyms{/lang}', {
-						amount: $('#synonymsAmount').val(),
-						faker: 'wcf\\system\\faker\\TagsSynonymsFaker',
-						fakerLocale: 'en_US',
-						proceedController: 'TagFaker'
+	{if $tagCount}
+		<div id="synonyms" class="container containerPadding tabMenuContent">
+			<script data-relocate="true">
+			//<![CDATA[
+				$(function() {
+					$('#fakeSynonyms').click(function () {
+						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.tags.synonyms{/lang}', {
+							amount: $('#synonymsAmount').val(),
+							faker: 'wcf\\system\\faker\\TagsSynonymsFaker',
+							fakerLocale: 'en_US',
+							proceedController: 'TagFaker'
+						});
 					});
 				});
-			});
-		//]]>
-		</script>
-		
-		<fieldset>
-			<legend>{lang}wcf.global.form.data{/lang}</legend>
+			//]]>
+			</script>
 			
-			<dl>
-				<dt><label for="synonymsAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
-				<dd>
-					<input type="number" id="synonymsAmount" name="synonymsAmount" class="small" min="1" value="100" />
-				</dd>
-			</dl>
-		</fieldset>
-		
-		<div class="formSubmit">
-			<button id="fakeSynonyms" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.tags.synonyms{/lang}</button>
+			<fieldset>
+				<legend>{lang}wcf.global.form.data{/lang}</legend>
+				
+				<dl>
+					<dt><label for="synonymsAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+					<dd>
+						<input type="number" id="synonymsAmount" name="synonymsAmount" class="small" min="1" value="100" />
+					</dd>
+				</dl>
+			</fieldset>
+			
+			<div class="formSubmit">
+				<button id="fakeSynonyms" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.tags.synonyms{/lang}</button>
+			</div>
 		</div>
-	</div>
+	{/if}
 	
 	{event name='tabMenuContent'}
 </div>
