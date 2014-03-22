@@ -48,7 +48,7 @@ class UserFollowFaker extends AbstractFaker {
 			FROM		wcf".WCF_N."_user
 			WHERE		userID <> ?
 			ORDER BY	userID ASC";
-		$statement = WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->userCount - 2));
+		$statement = WCF::getDB()->prepareStatement($sql, 1, $this->userCount - 2 ? $this->generator->numberBetween(0, $this->userCount - 2) : 0);
 		$statement->execute(array($target->userID));
 		$follower = $statement->fetchObject('\wcf\data\user\User');
 		
