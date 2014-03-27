@@ -86,7 +86,7 @@ class UserFaker extends AbstractFaker {
 		
 		// handle aboutMe
 		if (isset($this->parameters['userRandomAboutMe']) && $this->parameters['userRandomAboutMe']) {
-			$options[User::getUserOptionID('aboutMe')] = $this->generator->realText($this->generator->numberBetween(50, 1500));
+			$options[User::getUserOptionID('aboutMe')] = $this->generator->realText($this->generator->numberBetween(50, 1000));
 		}
 		
 		// handle birthday
