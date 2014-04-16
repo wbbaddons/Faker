@@ -6,7 +6,7 @@ use \wcf\system\WCF;
 /**
  * Worker implementation for generating Fake data.
  * 
- * @author	Tim Düsterhus
+ * @author	Tim Düsterhus, Maximilian Mader
  * @copyright	2013 Tim Düsterhus
  * @license	Creative Commons Attribution-NonCommercial-ShareAlike <http://creativecommons.org/licenses/by-nc-sa/3.0/legalcode>
  * @package	be.bastelstu.wcf.faker

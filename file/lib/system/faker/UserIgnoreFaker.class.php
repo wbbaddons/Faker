@@ -3,7 +3,7 @@ namespace wcf\system\faker;
 use \wcf\system\WCF;
 
 /**
- * Creates fake blocks.
+ * Creates fake ignores.
  * 
  * @author	Maximilian Mader
  * @copyright	2013 Tim Düsterhus

@@ -21,7 +21,7 @@
 			<li><a href="{@$__wcf->getAnchor('wall')}">{lang}wcf.acp.faker.user.wall{/lang}</a></li>
 			{if $userCount > 1}
 				<li><a href="{@$__wcf->getAnchor('follower')}">{lang}wcf.acp.faker.user.follower{/lang}</a></li>
-				<li><a href="{@$__wcf->getAnchor('blocks')}">{lang}wcf.acp.faker.user.blocks{/lang}</a></li>
+				<li><a href="{@$__wcf->getAnchor('ignores')}">{lang}wcf.acp.faker.user.ignores{/lang}</a></li>
 			{/if}
 			
 			{event name='tabMenuTabs'}
@@ -243,13 +243,13 @@
 			</div>
 		</div>
 		
-		<div id="blocks" class="container containerPadding tabMenuContent">
+		<div id="ignores" class="container containerPadding tabMenuContent">
 			<script data-relocate="true">
 			//<![CDATA[
 				$(function() {
-					$('#fakeBlocks').click(function () {
-						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.blocks{/lang}', {
-							amount: $('#blockAmount').val(),
+					$('#fakeIgnores').click(function () {
+						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.user.ignores{/lang}', {
+							amount: $('#ignoreAmount').val(),
 							faker: 'wcf\\system\\faker\\UserIgnoreFaker',
 							fakerLocale: 'en_US',
 							proceedController: 'UserFaker'
@@ -263,13 +263,13 @@
 				<legend>{lang}wcf.global.form.data{/lang}</legend>
 				
 				<dl>
-					<dt><label for="blockAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
-					<dd><input type="number" id="blockAmount" name="blockAmount" class="small" min="1" value="1000" /></dd>
+					<dt><label for="ignoreAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+					<dd><input type="number" id="ignoreAmount" name="ignoreAmount" class="small" min="1" value="1000" /></dd>
 				</dl>
 			</fieldset>
 			
 			<div class="formSubmit">
-				<button id="fakeBlocks" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.block{/lang}</button>
+				<button id="fakeIgnores" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.ignore{/lang}</button>
 			</div>
 		</div>
 	{/if}
