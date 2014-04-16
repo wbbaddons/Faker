@@ -63,7 +63,7 @@
 					<label><input name="commentLikeValue" type="radio" value="+-" /> <span class="icon icon16 icon-thumbs-up"></span> / <span class="icon icon16 icon-thumbs-down"></span></label>
 					<label><input name="commentLikeValue" type="radio" value="-" /> <span class="icon icon16 icon-thumbs-down"></span></label>
 					
-					<small>yadayada</small>
+					<small>{lang}wcf.acp.faker.likes.value.description{/lang}</small>
 				</dd>
 			</dl>
 			
@@ -71,7 +71,8 @@
 				<dt><label for="commentObjectTypeIDs">{lang}wcf.acp.faker.likes.commentObjectTypeIDs{/lang}</label></dt>
 				<dd>
 					{htmlCheckboxes options=$commentObjectTypeIDs name='commentObjectTypeIDs' id='commentObjectTypeIDs'}
-					<small>yadayada</small>
+					
+					<small>{lang}wcf.acp.faker.likes.commentObjectTypeIDs.description{/lang}</small>
 				</dd>
 			</dl>
 		</fieldset>

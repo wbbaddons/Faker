@@ -18,9 +18,7 @@
 	<nav class="tabMenu">
 		<ul>
 			<li><a href="{@$__wcf->getAnchor('tags')}">{lang}wcf.acp.faker.tags{/lang}</a></li>
-			{if $tagCount}
-				<li><a href="{@$__wcf->getAnchor('synonyms')}">{lang}wcf.acp.faker.tags.synonyms{/lang}</a></li>
-			{/if}
+			<li><a href="{@$__wcf->getAnchor('synonyms')}">{lang}wcf.acp.faker.tags.synonyms{/lang}</a></li>
 			
 			{event name='tabMenuTabs'}
 		</ul>
@@ -86,8 +84,8 @@
 		</div>
 	</div>
 	
-	{if $tagCount}
-		<div id="synonyms" class="container containerPadding tabMenuContent">
+	<div id="synonyms" class="container containerPadding tabMenuContent">
+		{if $tagCount}
 			<script data-relocate="true">
 			//<![CDATA[
 				$(function() {
@@ -117,8 +115,10 @@
 			<div class="formSubmit">
 				<button id="fakeSynonyms" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.tags.synonyms{/lang}</button>
 			</div>
-		</div>
-	{/if}
+		{else}
+			<p class="error">{lang}wcf.acp.faker.error.noTags{/lang}</p>
+		{/if}
+	</div>
 	
 	{event name='tabMenuContent'}
 </div>

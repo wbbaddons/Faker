@@ -19,10 +19,8 @@
 		<ul>
 			<li><a href="{@$__wcf->getAnchor('user')}">{lang}wcf.acp.faker.user{/lang}</a></li>
 			<li><a href="{@$__wcf->getAnchor('wall')}">{lang}wcf.acp.faker.user.wall{/lang}</a></li>
-			{if $userCount > 1}
-				<li><a href="{@$__wcf->getAnchor('follower')}">{lang}wcf.acp.faker.user.follower{/lang}</a></li>
-				<li><a href="{@$__wcf->getAnchor('ignores')}">{lang}wcf.acp.faker.user.ignores{/lang}</a></li>
-			{/if}
+			<li><a href="{@$__wcf->getAnchor('follower')}">{lang}wcf.acp.faker.user.follower{/lang}</a></li>
+			<li><a href="{@$__wcf->getAnchor('ignores')}">{lang}wcf.acp.faker.user.ignores{/lang}</a></li>
 			
 			{event name='tabMenuTabs'}
 		</ul>
@@ -212,8 +210,8 @@
 		</div>
 	</div>
 	
-	{if $userCount > 1}
-		<div id="follower" class="container containerPadding tabMenuContent">
+	<div id="follower" class="container containerPadding tabMenuContent">
+		{if $userCount > 1}
 			<script data-relocate="true">
 			//<![CDATA[
 				$(function() {
@@ -241,9 +239,13 @@
 			<div class="formSubmit">
 				<button id="fakeFollower" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.follower{/lang}</button>
 			</div>
-		</div>
-		
-		<div id="ignores" class="container containerPadding tabMenuContent">
+		{else}
+			<p class="error">{lang}wcf.acp.faker.error.twoUsersNeeded{/lang}</p>
+		{/if}
+	</div>
+	
+	<div id="ignores" class="container containerPadding tabMenuContent">
+		{if $userCount > 1}
 			<script data-relocate="true">
 			//<![CDATA[
 				$(function() {
@@ -271,8 +273,10 @@
 			<div class="formSubmit">
 				<button id="fakeIgnores" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.user.ignore{/lang}</button>
 			</div>
-		</div>
-	{/if}
+		{else}
+			<p class="error">{lang}wcf.acp.faker.error.twoUsersNeeded{/lang}</p>
+		{/if}
+	</div>
 	
 	{event name='tabMenuContent'}
 </div>
