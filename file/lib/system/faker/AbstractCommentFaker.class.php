@@ -56,7 +56,7 @@ abstract class AbstractCommentFaker extends AbstractFaker {
 		$sql = "SELECT		userID, username, registrationDate
 			FROM		wcf".WCF_N."_user
 			ORDER BY	userID ASC";
-		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->userCount - 1));
+		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->userCount - 1 ? $this->generator->numberBetween(0, $this->userCount - 1) : 0);
 		$statement->execute();
 		$sender = $statement->fetchObject('\wcf\data\user\User');
 		
