@@ -61,7 +61,7 @@ class CommentLikeFaker extends AbstractLikeFaker {
 		$sql = "SELECT		commentID
 			FROM		wcf".WCF_N."_comment
 			".$this->condition;
-		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->generator->numberBetween(0, $this->commentCount - 1));
+		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql, 1, $this->commentCount - 1 ? $this->generator->numberBetween(0, $this->commentCount - 1) : 0);
 		$statement->execute($this->condition->getParameters());
 		
 		return $statement->fetchColumn();
