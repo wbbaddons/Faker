@@ -86,10 +86,8 @@ class ConversationFaker extends AbstractFaker {
 					'time' => $this->generator->numberBetween($minTime, TIME_NOW),
 					'userID' => $sender->userID,
 					'username' => $sender->username,
-					'isDraft' => 0,
 					'participantCanInvite' => $this->generator->boolean($participantCanInviteChance) ? 1 : 0
 				),
-				'attachmentHandler' => null,
 				'messageData' => array(
 					'message' => $this->generator->realText($this->generator->numberBetween(10, 10000)),
 					'enableBBCodes' => 0,

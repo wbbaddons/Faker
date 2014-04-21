@@ -99,11 +99,55 @@
 	</div>
 	
 	<div id="conversationsParticipants" class="container containerPadding tabMenuContent">
-		<p class="error">TODO</p>
+		{if $conversationCount > 0}
+			<p class="error">TODO</p>
+		{else}
+			<p class="error">{lang}wcf.acp.faker.error.noConversations{/lang}</p>
+		{/if}
 	</div>
 	
 	<div id="conversationsMessages" class="container containerPadding tabMenuContent">
-		<p class="error">TODO</p>
+		{if $conversationCount > 0}
+			<script data-relocate="true">
+			//<![CDATA[
+				$(function() {
+					$('#fakeConversationMessages').click(function () {
+						new WCF.ACP.Worker('faker', 'wcf\\system\\worker\\FakerWorker', '{lang}wcf.acp.faker.faking.conversationMessages{/lang}', {
+							amount: $('#conversationMessagesAmount').val(),
+							faker: 'wcf\\system\\faker\\ConversationMessageFaker',
+							fakerLocale: $('#conversationMessageFakerLocale').val(),
+							proceedController: 'ConversationFaker'
+						});
+					});
+				});
+			//]]>
+			</script>
+			
+			<fieldset>
+				<legend>{lang}wcf.global.form.data{/lang}</legend>
+				
+				<dl>
+					<dt><label for="conversationMessageFakerLocale">{lang}wcf.acp.faker.locale{/lang}</label></dt>
+					<dd>
+						{htmlOptions options=$availableLocales name='conversationMessageFakerLocale' id='conversationMessageFakerLocale'}
+						<small>{lang}wcf.acp.faker.locale.description{/lang}</small>
+					</dd>
+				</dl>
+				
+				<dl>
+					<dt><label for="conversationMessagesAmount">{lang}wcf.acp.faker.amount{/lang}</label></dt>
+					<dd>
+						<input type="number" id="conversationMessagesAmount" name="conversationMessagesAmount" class="small" min="1" value="100" />
+					</dd>
+				</dl>
+			</fieldset>
+			
+			<div class="formSubmit">
+				<button id="fakeConversationMessages" class="buttonPrimary" accesskey="s">{lang}wcf.acp.faker.button.conversationMessages{/lang}</button>
+			</div>
+		{else}
+			<p class="error">{lang}wcf.acp.faker.error.noConversations{/lang}</p>
+		{/if}
 	</div>
 	{event name='tabMenuContent'}
 </div>

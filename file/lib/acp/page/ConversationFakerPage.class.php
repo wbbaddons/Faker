@@ -17,6 +17,13 @@ class ConversationFakerPage extends AbstractFakerPage {
 	public $activeMenuItem = 'wcf.acp.menu.link.faker.conversations';
 	
 	/**
+	 * number of conversations
+	 * 
+	 * @var	integer
+	 */
+	public $conversationCount = 0;
+	
+	/**
 	 * number of registered users
 	 * @var	integer
 	 */
@@ -29,6 +36,7 @@ class ConversationFakerPage extends AbstractFakerPage {
 		parent::assignVariables();
 		
 		\wcf\system\WCF::getTPL()->assign(array(
+			'conversationCount' => $this->conversationCount,
 			'userCount' => $this->userCount
 		));
 	}
@@ -38,6 +46,15 @@ class ConversationFakerPage extends AbstractFakerPage {
 	 */
 	public function readData() {
 		parent::readData();
+		
+		$sql = "SELECT	COUNT(*)
+			FROM	wcf".WCF_N."_conversation
+			WHERE	isDraft = ?
+				AND	isClosed = ?";
+		$statement = \wcf\system\WCF::getDB()->prepareStatement($sql);
+		$statement->execute(array(0, 0));
+		
+		$this->conversationCount = $statement->fetchColumn();
 		
 		$sql = "SELECT	COUNT(*)
 			FROM	wcf".WCF_N."_user";
